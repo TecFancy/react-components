@@ -15,7 +15,7 @@
     "clean": "rimraf ./dist",
     "start": "storybook dev",
     "build": "npm run clean && npm run build:es && npm run build:storybook",
-    "build:es": "rollup --config rollup/rullop.esm.config.js",
+    "build:es": "rollup --config rollup/rollup.esm.config.mjs",
     "build:storybook": "storybook build"
   },
   "dependencies": {

@@ -1,4 +1,4 @@
-import basicConfig from './rollup.config';
+import basicConfig from './rollup.config.mjs';
 import excludeDependenciesFromBundle from "rollup-plugin-exclude-dependencies-from-bundle";
 
 const config = {
