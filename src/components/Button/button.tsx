@@ -4,6 +4,7 @@ import classNames from "classnames";
 interface ButtonProps {
     label?: string;
     className?: string;
+    primary?: boolean;
     disabled?: boolean;
     onClick: () => void;
     children: React.ReactNode;
@@ -13,6 +14,7 @@ const Button = (props: ButtonProps) => {
     const {
         label,
         className,
+        primary,
         disabled,
         onClick,
         children,
@@ -23,6 +25,7 @@ const Button = (props: ButtonProps) => {
             aria-label={label}
             className={classNames('btn', className, {
                 disabled,
+                primary,
             })}
             onClick={onClick}
         >
@@ -33,6 +36,7 @@ const Button = (props: ButtonProps) => {
 
 Button.defaultProps = {
     label: 'button',
+    primary: true,
     disabled: false,
 };
 

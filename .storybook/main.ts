@@ -14,5 +14,25 @@ const config: StorybookConfig = {
     name: "@storybook/react-webpack5",
     options: {},
   },
+  webpack: async (config) => {
+    const rules = config.module?.rules || [];
+    return {
+      ...config,
+      module: {
+        ...config.module,
+        rules: [
+          ...rules,
+          {
+            test: /\.scss$/,
+            use: [
+              "style-loader",
+              "css-loader",
+              "sass-loader",
+            ],
+          },
+        ],
+      },
+    };
+  },
 };
 export default config;

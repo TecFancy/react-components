@@ -37,6 +37,7 @@
     "@storybook/test": "^8.1.1",
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
+    "css-loader": "^7.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "rimraf": "^5.0.7",
@@ -45,7 +46,9 @@
     "rollup-plugin-sass": "^1.12.22",
     "rollup-plugin-typescript2": "^0.36.0",
     "sass": "^1.77.2",
+    "sass-loader": "^14.2.1",
     "storybook": "^8.1.1",
+    "style-loader": "^4.0.0",
     "typescript": "^5.4.5"
   },
   "peerDependencies": {
