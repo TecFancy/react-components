@@ -1,7 +1,10 @@
 import React from "react";
+import classNames from "classnames";
 
 interface ButtonProps {
     label?: string;
+    className?: string;
+    disabled?: boolean;
     onClick: () => void;
     children: React.ReactNode;
 }
@@ -9,6 +12,8 @@ interface ButtonProps {
 const Button = (props: ButtonProps) => {
     const {
         label,
+        className,
+        disabled,
         onClick,
         children,
     } = props;
@@ -16,6 +21,9 @@ const Button = (props: ButtonProps) => {
     return (
         <button
             aria-label={label}
+            className={classNames('btn', className, {
+                disabled,
+            })}
             onClick={onClick}
         >
             {children}
@@ -25,6 +33,7 @@ const Button = (props: ButtonProps) => {
 
 Button.defaultProps = {
     label: 'button',
+    disabled: false,
 };
 
 export default Button;
