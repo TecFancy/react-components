@@ -10,12 +10,6 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
-    viewMode: 'docs',
-    options: {
-      storySort: {
-        order: [],
-      },
-    },
   },
 };
 
