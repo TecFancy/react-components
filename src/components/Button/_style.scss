@@ -1,8 +1,27 @@
+.btn {
+  font-weight: 700;
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+}
+
 .disabled {
   cursor: not-allowed;
 }
 
-.primary {
-  background-color: blue;
-  color: white;
+.btn-small {
+  font-size: 12px;
+  padding: 10px 16px;
+}
+
+.btn-medium {
+  font-size: 16px;
+  padding: 11px 20px;
+}
+
+.btn-large {
+  font-size: 18px;
+  padding: 12px 24px;
 }

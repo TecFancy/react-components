@@ -1,9 +1,10 @@
-import type { Preview } from "@storybook/react";
+import type { Preview } from '@storybook/react';
 
 import '../src/styles/index.scss';
 
 const preview: Preview = {
   parameters: {
+    layout: 'centered',
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -11,6 +12,7 @@ const preview: Preview = {
       },
     },
   },
+  tags: ['autodocs'],
 };
 
 export default preview;

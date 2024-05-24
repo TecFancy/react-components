@@ -1,43 +1,32 @@
 import React from "react";
 import classNames from "classnames";
 
+type ButtonSize = 'small' | 'medium' | 'large';
+
 interface ButtonProps {
     label?: string;
     className?: string;
-    primary?: boolean;
-    disabled?: boolean;
-    onClick: () => void;
-    children: React.ReactNode;
+    size?: ButtonSize,
 }
 
 const Button = (props: ButtonProps) => {
     const {
-        label,
+        label = 'button',
         className,
-        primary,
-        disabled,
-        onClick,
-        children,
+        size = 'medium',
     } = props;
+
+    const classes = classNames("btn", className, {
+        [`btn-${size}`]: size,
+    });
 
     return (
         <button
-            aria-label={label}
-            className={classNames('btn', className, {
-                disabled,
-                primary,
-            })}
-            onClick={onClick}
+            className={classes}
         >
-            {children}
+            {label}
         </button>
     );
-};
-
-Button.defaultProps = {
-    label: 'button',
-    primary: true,
-    disabled: false,
 };
 
 export default Button;
