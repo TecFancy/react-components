@@ -41,11 +41,11 @@ const Button = ({
     onClick,
 }: ButtonProps) => {
 
-    const classes = classNames("btn", className, {
+    const classes = classNames("btn", {
         [`btn-${size}`]: size,
         [`btn-${btnType}`]: btnType,
         'btn-disabled': disabled,
-    });
+    }, className);
 
     return (
         <button
