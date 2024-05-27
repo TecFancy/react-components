@@ -38,6 +38,7 @@ const Button = ({
     size = 'medium',
     type: btnType = 'secondary',
     disabled = false,
+    onClick,
 }: ButtonProps) => {
 
     const classes = classNames("btn", className, {
@@ -50,6 +51,7 @@ const Button = ({
         <button
             type="button"
             className={classes}
+            onClick={onClick}
         >
             {label}
         </button>
