@@ -6,7 +6,14 @@ import sass from 'rollup-plugin-sass';
 
 const overrides = {
     compilerOptions: { declaration: true },
-    exclude: ["src/**/*.test.tsx", "src/**/*.stories.tsx", "src/**/*.stories.mdx", "src/setupTests.ts"],
+    exclude: [
+        "src/**/*.test.tsx",
+        "src/**/*.stories.tsx",
+        "src/**/*.stories.mdx",
+        "src/setupTests.ts",
+        "src/stories/**/*",
+        "src/**/*.stories.*",
+    ],
 }
 
 const config = {
