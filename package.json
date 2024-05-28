@@ -12,11 +12,11 @@
     "dist"
   ],
   "scripts": {
-    "clean": "rimraf ./dist",
+    "start": "storybook dev -p 6006",
     "build": "npm run clean && npm run build:es && npm run build:storybook",
+    "clean": "rimraf ./dist",
     "build:es": "rollup --config rollup/rollup.esm.config.mjs",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build:storybook": "storybook build"
   },
   "dependencies": {
     "classnames": "^2.5.1"
