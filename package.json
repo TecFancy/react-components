@@ -17,13 +17,22 @@
     "clean": "rimraf ./dist",
     "build:es": "rollup --config rollup/rollup.esm.config.mjs",
     "build:storybook": "storybook build",
-    "prepare": "husky"
+    "prepare": "husky",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write --ignore-unknown"
+    ]
   },
   "dependencies": {
     "classnames": "^2.5.1"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.4.0",
+    "@eslint/compat": "^1.0.3",
+    "@eslint/js": "^9.4.0",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^15.2.3",
@@ -39,6 +48,9 @@
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
     "css-loader": "^7.1.1",
+    "eslint": "^9.4.0",
+    "eslint-plugin-react": "^7.34.2",
+    "globals": "^15.3.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.5",
     "prettier": "3.2.5",
@@ -53,14 +65,12 @@
     "sass-loader": "^14.2.1",
     "storybook": "^8.1.2",
     "style-loader": "^4.0.0",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.11.0"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
-  },
-  "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
   },
   "browserslist": {
     "production": [
