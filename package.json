@@ -16,7 +16,8 @@
     "build": "npm run clean && npm run build:es && npm run build:storybook",
     "clean": "rimraf ./dist",
     "build:es": "rollup --config rollup/rollup.esm.config.mjs",
-    "build:storybook": "storybook build"
+    "build:storybook": "storybook build",
+    "prepare": "husky"
   },
   "dependencies": {
     "classnames": "^2.5.1"
@@ -38,6 +39,9 @@
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
     "css-loader": "^7.1.1",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.5",
+    "prettier": "3.2.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "rimraf": "^5.0.7",
@@ -54,6 +58,9 @@
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   },
   "browserslist": {
     "production": [
