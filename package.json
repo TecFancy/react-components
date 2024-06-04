@@ -17,11 +17,10 @@
     "clean": "rimraf ./dist",
     "build:es": "rollup --config rollup/rollup.esm.config.mjs",
     "build:storybook": "storybook build",
-    "prepare": "husky",
-    "format": "prettier --write --ignore-unknown ."
+    "prepare": "husky && husky install"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "*.{js,jsx,ts,tsx,css,scss,md}": "prettier --write"
   },
   "dependencies": {
     "classnames": "^2.5.1"
