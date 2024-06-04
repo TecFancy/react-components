@@ -5,10 +5,10 @@ type ButtonSize = 'small' | 'medium' | 'large';
 type ButtonType = 'primary' | 'secondary' | 'warning';
 
 interface ButtonProps {
-  /**
-   * Button contents
-   */
-  label: string;
+    /**
+     * Button contents
+     */
+    label: string;
   /**
    * Optional class name
    */
