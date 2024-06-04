@@ -17,7 +17,8 @@
     "clean": "rimraf ./dist",
     "build:es": "rollup --config rollup/rollup.esm.config.mjs",
     "build:storybook": "storybook build",
-    "prepare": "husky"
+    "prepare": "husky",
+    "format": "prettier --write --ignore-unknown ."
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"

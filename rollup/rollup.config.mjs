@@ -5,26 +5,26 @@ import json from '@rollup/plugin-json';
 import sass from 'rollup-plugin-sass';
 
 const overrides = {
-    compilerOptions: { declaration: true },
-    exclude: [
-        "src/**/*.test.tsx",
-        "src/**/*.stories.tsx",
-        "src/**/*.stories.mdx",
-        "src/setupTests.ts",
-        "src/stories/**/*",
-        "src/**/*.stories.*",
-    ],
-}
+  compilerOptions: { declaration: true },
+  exclude: [
+    'src/**/*.test.tsx',
+    'src/**/*.stories.tsx',
+    'src/**/*.stories.mdx',
+    'src/setupTests.ts',
+    'src/stories/**/*',
+    'src/**/*.stories.*',
+  ],
+};
 
 const config = {
-    input: 'src/index.tsx',
-    plugins: [
-        nodeResolve(),
-        commonjs(),
-        json(),
-        typescript({ tsconfigOverride: overrides }),
-        sass({ output: 'dist/index.css' }),
-    ],
+  input: 'src/index.tsx',
+  plugins: [
+    nodeResolve(),
+    commonjs(),
+    json(),
+    typescript({ tsconfigOverride: overrides }),
+    sass({ output: 'dist/index.css' }),
+  ],
 };
 
 export default config;
