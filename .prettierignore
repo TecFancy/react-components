@@ -8,3 +8,8 @@ src/stories
 
 .pnp.cjs
 .pnp.loader.mjs
+
+.yarn
+.pnp.cjs
+.pnp.loader.mjs
+stats.html
