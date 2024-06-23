@@ -26,7 +26,7 @@ const config = {
   plugins: [
     nodeResolve(),
     commonjs(),
-    json(),
+      json(),
     typescript({ tsconfigOverride: overrides }),
     sass({
       output: 'dist/index.css',
