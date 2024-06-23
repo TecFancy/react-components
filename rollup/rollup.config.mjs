@@ -25,7 +25,7 @@ const config = {
   input: 'src/index.tsx',
   plugins: [
     nodeResolve(),
-    commonjs(),
+      commonjs(),
       json(),
     typescript({ tsconfigOverride: overrides }),
     sass({
