@@ -47,12 +47,12 @@ const Button = ({
       [`btn-${btnType}`]: btnType,
       'btn-disabled': disabled,
     },
-    className
+      className
   );
 
   return (
     <button type="button" className={classes} onClick={onClick}>
-      {label}
+        {label}
     </button>
   );
 };

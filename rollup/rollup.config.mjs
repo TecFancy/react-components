@@ -25,14 +25,14 @@ const config = {
   input: 'src/index.tsx',
   plugins: [
     nodeResolve(),
-      commonjs(),
-      json(),
+    commonjs(),
+    json(),
     typescript({ tsconfigOverride: overrides }),
     sass({
       output: 'dist/index.css',
       processor: css => postcss([autoprefixer, cssnano()])
-          .process(css)
-          .then(result => result.css),
+        .process(css, { from: 'src/styles/index.scss' })
+        .then(result => result.css),
     }),
     terser(),
     visualizer(),
