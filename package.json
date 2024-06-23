@@ -19,10 +19,13 @@
     "build:storybook": "storybook build",
     "postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
-    "postpublish": "pinst --enable"
+    "postpublish": "pinst --enable",
+    "prepack": "pinst --disable",
+    "postpack": "pinst --enable"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,css,scss,md}": "prettier --write ."
+    "*.{js,jsx,ts,tsx,css,scss,md}": "prettier --write .",
+    "*.{js,css,md}": "prettier --write"
   },
   "dependencies": {
     "classnames": "^2.5.1"
