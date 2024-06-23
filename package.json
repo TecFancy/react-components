@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "start": "storybook dev -p 6006",
-    "build": "npm run clean && npm run build:es && npm run build:storybook",
+    "build": "yarn clean && yarn build:es && yarn build:storybook",
     "clean": "rimraf ./dist",
     "build:es": "rollup --config rollup/rollup.esm.config.mjs",
     "build:storybook": "storybook build",
@@ -30,6 +30,7 @@
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
     "@storybook/addon-essentials": "^8.1.2",
     "@storybook/addon-interactions": "^8.1.2",
     "@storybook/addon-links": "^8.1.2",
@@ -41,9 +42,12 @@
     "@storybook/test": "^8.1.2",
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.19",
     "css-loader": "^7.1.1",
+    "cssnano": "^7.0.3",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.5",
+    "postcss": "^8.4.38",
     "prettier": "3.2.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -52,6 +56,7 @@
     "rollup-plugin-exclude-dependencies-from-bundle": "^1.1.23",
     "rollup-plugin-sass": "^1.12.22",
     "rollup-plugin-typescript2": "^0.36.0",
+    "rollup-plugin-visualizer": "^5.12.0",
     "sass": "^1.77.2",
     "sass-loader": "^14.2.1",
     "storybook": "^8.1.2",
@@ -73,5 +78,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "packageManager": "yarn@4.3.1"
 }
