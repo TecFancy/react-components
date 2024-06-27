@@ -1,0 +1,55 @@
+
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Quick Start" />
+
+# Quick Start
+
+System environment requirements:
+
+- `React`: 16.8.0 or later
+- `React-DOM`: 16.8.0 or later
+- `classNames`: library is required for the component to work properly
+
+
+## Installation
+
+Run the following command to configure the npm registry to the company's private repository:
+
+```bash
+$ npm config set registry http://npm.rsp.com
+```
+
+Add install the package, run the following command:
+
+```bash
+$ npm install @rsp/react-components
+```
+
+or
+
+```bash
+$ yarn add @rsp/react-components
+```
+## How to use
+
+Import the CSS file in the main file of the project:
+
+```tsx
+// App.js
+import "@rsp/react-components/dist/index.css";
+
+// ...
+```
+
+Import the component in the file where you want to use it:
+
+```tsx
+import { Button } from "@rsp/react-components";
+
+const App = () => {
+  return (
+    <Button>Click me</Button>
+  );
+};
+```
