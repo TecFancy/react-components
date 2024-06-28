@@ -1,5 +1,10 @@
+// component imports
 import { Button } from '../../';
 
+// functions import
+import request from '../../../mocks/request';
+
+// type imports
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
@@ -58,5 +63,23 @@ export const Small: Story = {
   args: {
     label: 'Button',
     size: 'small',
+  },
+};
+
+/**
+ * This story demonstrates how to use the `onClick` function to make a request to the server.
+ */
+export const LoginButton: Story = {
+  args: {
+    label: 'Login',
+    type: 'primary',
+    onClick: async () => {
+      try {
+        const response = await request.get('/example/login');
+        console.log('Login successful:', response.data);
+      } catch (error) {
+        console.error('Login failed:', error);
+      }
+    },
   },
 };

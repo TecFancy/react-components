@@ -56,10 +56,13 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.19",
+    "axios": "^1.7.2",
     "css-loader": "^7.1.2",
     "cssnano": "^7.0.3",
     "husky": ">=9",
     "lint-staged": ">=15",
+    "msw": "^2.3.1",
+    "msw-storybook-addon": "^2.0.2",
     "npm-check-updates": "^16.14.20",
     "pinst": ">=3",
     "postcss": "^8.4.38",
@@ -95,5 +98,10 @@
       "last 1 safari version"
     ]
   },
-  "packageManager": "yarn@4.3.1"
+  "packageManager": "yarn@4.3.1",
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
+  }
 }
