@@ -15,7 +15,7 @@
     "noEmit": true,
     "jsx": "react",
     "noImplicitAny": false,
-    "types": ["jest", "@testing-library/jest-dom"],
+    "types": ["jest", "@testing-library/jest-dom"]
   },
   "include": ["src"]
 }
