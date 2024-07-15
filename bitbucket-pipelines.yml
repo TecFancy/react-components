@@ -21,4 +21,4 @@ pipelines:
             variables:
               SONAR_HOST_URL: https://sonarcloud.io/ # Get the value from the repository/workspace variable.
               SONAR_TOKEN: ${SONAR_TOKEN} # Get the value from the repository/workspace variable. You shouldn't set secret in clear text here.
-              SONAR_ORGANIZATION: smpower
+              SONAR_ORGANIZATION: ${SONAR_ORGANIZATION} # Get the value from the repository/workspace variable.
