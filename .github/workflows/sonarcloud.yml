@@ -77,8 +77,8 @@ jobs:
             -Dsonar.organization=smpower
             -Dsonar.projectKey=TecFancy_react-components
             -Dsonar.projectName=react-components
-            -Dsonar.sources=src
-            -Dsonar.tests=src
+            -Dsonar.sources=../../src
+            -Dsonar.tests=../../src
             # -Dsonar.inclusions=**
             -Dsonar.test.inclusions=**/*.test.js,**/*.spec.js
             -Dsonar.exclusions=**/*.stories.tsx
