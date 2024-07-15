@@ -76,10 +76,11 @@ jobs:
             -Dsonar.scm.provider=git
             -Dsonar.organization=smpower
             -Dsonar.projectKey=TecFancy_react-components
+            -Dsonar.projectName=react-components
             -Dsonar.sources=src
             -Dsonar.tests=src
-            -Dsonar.inclusions=**
-            -Dsonar.test.inclusions=src/**/*.test.js,src/**/*.spec.js
+            # -Dsonar.inclusions=**
+            -Dsonar.test.inclusions=**/*.test.js,**/*.spec.js
+            -Dsonar.exclusions=**/*.stories.tsx
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
             -Dsonar.sourceEncoding=UTF-8
-            -Dsonar.exclusions=src/**/*.stories.{js,jsx,ts,tsx}
