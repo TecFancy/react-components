@@ -42,7 +42,7 @@ rollup/
 .vscode/
 
 # Ignore coverage files
-coverage/
+coverage/*
 !coverage/lcov.info
 
 # Ignore local environment files
