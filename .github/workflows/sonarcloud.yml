@@ -72,13 +72,14 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}   # Generate a token on Sonarcloud.io, add it to the secrets of this repo with the name SONAR_TOKEN (Settings > Secrets > Actions > add new repository secret)
         with:
+          projectBaseDir: .
           args: >
             -Dsonar.scm.provider=git
             -Dsonar.organization=smpower
             -Dsonar.projectKey=TecFancy_react-components
             -Dsonar.projectName=react-components
-            #-Dsonar.sources=src
-            #-Dsonar.tests=src
+            -Dsonar.sources=src
+            -Dsonar.tests=src
             # -Dsonar.inclusions=**
             -Dsonar.test.inclusions=**/*.test.js,**/*.spec.js
             -Dsonar.exclusions=**/*.stories.tsx
