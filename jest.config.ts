@@ -23,8 +23,10 @@ const config: Config = {
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   collectCoverageFrom: [
-    'src/components/**/*.{ts,tsx}',
-    '!src/components/**/{test,spec,stories,index}.{ts,tsx}',
+    'src/components/**/*.{js,jsx,ts,tsx}', // Include all files in the src folder
+    '!src/**/*.test.{js,jsx,ts,tsx}', // Exclude test files
+    '!src/**/*.stories.{js,jsx,ts,tsx}', // Exclude stories files
+    '!src/**/index.{js,jsx,ts,tsx}', // Exclude index files
   ],
 
   // The directory where Jest should output its coverage files
