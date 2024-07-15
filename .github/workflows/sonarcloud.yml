@@ -39,6 +39,26 @@ permissions:
   pull-requests: read # allows SonarCloud to decorate PRs with analysis results
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20.10.0'
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Run tests and generate coverage
+        run: yarn test --coverage
+
   Analysis:
     runs-on: ubuntu-latest
 
@@ -50,9 +70,9 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@4006f663ecaf1f8093e8e4abb9227f6041f52216
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}   # Generate a token on Sonarcloud.io, add it to the secrets of this repo with the name SONAR_TOKEN (Settings > Secrets > Actions > add new repository secret)
-        with:
+        #with:
           # Additional arguments for the SonarScanner CLI
-          args:
+          #args:
             # Unique keys of your project and organization. You can find them in SonarCloud > Information (bottom-left menu)
             # mandatory
             #-Dsonar.projectKey=TecFancy_react-components
