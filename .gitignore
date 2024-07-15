@@ -54,3 +54,6 @@ coverage/
 # Ignore misc files
 *.log
 stats.html
+
+# Include coverage files
+!./coverage/lcov.info
