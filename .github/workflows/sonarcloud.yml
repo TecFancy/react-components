@@ -60,6 +60,7 @@ jobs:
         run: yarn test --coverage
 
   Analysis:
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
