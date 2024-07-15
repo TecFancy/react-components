@@ -57,7 +57,7 @@ jobs:
         run: yarn install
 
       - name: Run tests and generate coverage
-        run: yarn test --coverage
+        run: yarn test
 
   Analysis:
     needs: build
