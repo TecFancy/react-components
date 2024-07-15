@@ -71,3 +71,15 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@4006f663ecaf1f8093e8e4abb9227f6041f52216
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}   # Generate a token on Sonarcloud.io, add it to the secrets of this repo with the name SONAR_TOKEN (Settings > Secrets > Actions > add new repository secret)
+        with:
+          args: >
+            -Dsonar.scm.provider=git
+            -Dsonar.organization=smpower
+            -Dsonar.projectKey=TecFancy_react-components
+            -Dsonar.sources=src
+            -Dsonar.tests=src
+            -Dsonar.inclusions=**
+            -Dsonar.test.inclusions=src/**/*.test.js,src/**/*.spec.js
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+            -Dsonar.sourceEncoding=UTF-8
+            -Dsonar.exclusions=src/**/*.stories.{js,jsx,ts,tsx}
