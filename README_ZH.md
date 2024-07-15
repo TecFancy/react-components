@@ -1,5 +1,16 @@
 # README
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=TecFancy_react-components&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=TecFancy_react-components)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=TecFancy_react-components&metric=bugs)](https://sonarcloud.io/summary/new_code?id=TecFancy_react-components)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=TecFancy_react-components&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=TecFancy_react-components)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=TecFancy_react-components&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=TecFancy_react-components)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=TecFancy_react-components&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=TecFancy_react-components)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=TecFancy_react-components&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=TecFancy_react-components)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=TecFancy_react-components&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=TecFancy_react-components)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=TecFancy_react-components&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=TecFancy_react-components)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=TecFancy_react-components&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=TecFancy_react-components)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=TecFancy_react-components&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=TecFancy_react-components)
+
 [English](./README.md) | [简体中文](./README_ZH.md)
 
 ## 快速开始
