@@ -43,6 +43,7 @@ rollup/
 
 # Ignore coverage files
 coverage/
+!coverage/lcov.info
 
 # Ignore local environment files
 .env
@@ -54,6 +55,3 @@ coverage/
 # Ignore misc files
 *.log
 stats.html
-
-# Include coverage files
-!./coverage/lcov.info
