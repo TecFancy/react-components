@@ -21,7 +21,7 @@ pipelines:
         clone:
             depth: full # SonarCloud scanner needs the full history to assign issues properly
         script:
-          - pipe: sonarsource/sonarqube-scan:2.0.1
+          - pipe: sonarsource/sonarcloud-scan:2.0.0 # sonarsource/sonarqube-scan:2.0.1
             variables:
               SONAR_HOST_URL: https://sonarcloud.io/
               SONAR_TOKEN: ${SONAR_TOKEN} # Get the value from the repository/workspace variable. You shouldn't set secret in clear text here.
