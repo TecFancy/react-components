@@ -39,26 +39,6 @@ permissions:
   pull-requests: read # allows SonarCloud to decorate PRs with analysis results
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0  # Shallow clones should be disabled
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '20.10.0'
-
-      - name: Install dependencies
-        run: yarn install
-
-      - name: Run tests and generate coverage
-        run: yarn test --coverage
-
   Analysis:
     runs-on: ubuntu-latest
 
