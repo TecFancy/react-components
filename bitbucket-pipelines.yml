@@ -11,13 +11,17 @@ pipelines:
         name: Install dependencies and run tests
         caches:
           - node
+        clone:
+          depth: full # SonarCloud scanner needs the full history to assign issues properly
         script:
           - yarn install
           - yarn test
     - step:
         name: SonarQube Scan
+        clone:
+            depth: full # SonarCloud scanner needs the full history to assign issues properly
         script:
           - pipe: sonarsource/sonarqube-scan:2.0.1
             variables:
-              SONAR_HOST_URL: https://sonarcloud.io/ # Get the value from the repository/workspace variable.
+              SONAR_HOST_URL: https://sonarcloud.io/
               SONAR_TOKEN: ${SONAR_TOKEN} # Get the value from the repository/workspace variable. You shouldn't set secret in clear text here.
