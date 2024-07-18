@@ -2,6 +2,7 @@ import typescript from 'rollup-plugin-typescript2';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
+import postcssImport from 'postcss-import';
 import autoprefixer from 'autoprefixer';
 import cssnano from "cssnano";
 import postcss from 'postcss';
@@ -30,7 +31,7 @@ const config = {
     typescript({ tsconfigOverride: overrides }),
     sass({
       output: 'dist/index.css',
-      processor: css => postcss([autoprefixer, cssnano()])
+      processor: css => postcss([postcssImport, autoprefixer, cssnano()])
         .process(css, { from: 'src/styles/index.scss' })
         .then(result => result.css),
     }),
