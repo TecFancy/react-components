@@ -1,0 +1,141 @@
+$background-color: #e9ecef;
+$background-color-night: #212529;
+
+$card-background-color: #dee2e6;
+$card-background-color-night: #343a40;
+
+$primary-text: #2d3748;
+$primary-text-night: #adb5bd;
+
+$secondary-text: #4a5568;
+$secondary-text-night: #98a2b3;
+
+$third-text: #a0aec0;
+$third-text-night: #495057;
+
+.container {
+  width: 412px;
+}
+
+.main {
+  background-color: $background-color;
+
+  p {
+    margin: 0;
+    font-family: Inter, serif;
+  }
+
+  .inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    row-gap: 24px;
+    max-width: 412px;
+    margin: 0 auto;
+    padding: 20px;
+
+    .recite {
+      align-self: stretch;
+      padding-left: 18px;
+      .word {
+        font-size: 36px;
+        font-weight: bold;
+        line-height: 44px;
+        color: $primary-text;
+      }
+
+      .phonetic {
+        padding: 12px 0;
+        line-height: 17px;
+        font-size: 16px;
+        color: #4a5568;
+      }
+
+      .paraphrase {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        row-gap: 4px;
+        span {
+          display: inline-block;
+          height: 18px;
+          border-radius: 7px;
+          background-color: $card-background-color;
+          &:nth-child(1) {
+            width: 164px;
+          }
+          &:nth-child(2) {
+            width: 106px;
+          }
+        }
+        p {
+          display: none;
+        }
+      }
+    }
+
+    .cards {
+      align-self: stretch;
+      .example {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        row-gap: 16px;
+        padding: 20px 18px;
+        border-radius: 12px;
+        background-color: $card-background-color;
+        .en {
+          font-size: 18px;
+          line-height: 24px;
+          color: $primary-text;
+        }
+      }
+    }
+
+    .tags {
+      align-self: stretch;
+      text-align: right;
+      padding-right: 18px;
+      line-height: 17px;
+      font-size: 15px;
+      color: $third-text;
+    }
+  }
+}
+
+.night_mode .main {
+  background-color: $background-color-night;
+  .inner {
+    .recite {
+      .paraphrase {
+        span {
+          background-color: $card-background-color-night;
+        }
+        p {
+          color: $primary-text-night;
+        }
+      }
+
+      .word {
+        color: $primary-text-night;
+        .phonetic {
+          color: $secondary-text-night;
+        }
+      }
+    }
+
+    .cards .example {
+      background-color: $card-background-color-night;
+      p {
+        color: $primary-text-night;
+      }
+    }
+
+    .tags {
+      color: $third-text-night;
+    }
+  }
+}
