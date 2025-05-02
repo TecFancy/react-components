@@ -11082,6 +11082,7 @@ __metadata:
     typescript: "npm:^5.5.2"
     webpack: "npm:^5.99.7"
   peerDependencies:
+    classnames: ^2.5.1
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
   languageName: unknown
