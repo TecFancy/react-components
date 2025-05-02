@@ -6,7 +6,8 @@
   "author": "",
   "license": "ISC",
   "sideEffects": [
-    "*.css"
+    "*.css",
+    "*.scss"
   ],
   "main": "dist/es/index.js",
   "module": "dist/es/index.js",
