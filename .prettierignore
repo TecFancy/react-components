@@ -5,6 +5,7 @@ src/stories
 
 .husky
 .dist
+.public
 
 .pnp.cjs
 .pnp.loader.mjs

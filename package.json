@@ -28,8 +28,7 @@
     "postpack": "pinst --enable"
   },
   "lint-staged": {
-    "*.{ts,tsx,css,scss,md}": "prettier --write .",
-    "*.{css,md}": "prettier --write"
+    "*.{js,jsx,ts,tsx,css,scss,md}": "prettier --write"
   },
   "imports": {
     "@": "./src"
