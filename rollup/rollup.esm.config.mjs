@@ -19,6 +19,10 @@ const config = {
         {
           src: 'src/styles/_variables.scss',
           dest: 'dist/styles',
+        },
+        {
+          src: 'src/statics/fonts',
+          dest: 'dist/statics',
         }
       ],
     }),
