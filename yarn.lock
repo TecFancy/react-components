@@ -3306,15 +3306,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-onboarding@npm:^8.6.12":
-  version: 8.6.12
-  resolution: "@storybook/addon-onboarding@npm:8.6.12"
-  peerDependencies:
-    storybook: ^8.6.12
-  checksum: 10c0/1dfdfff93b044efaf186d4011f250526187816197538e265ab26dacac1f1dc425f3676ba68874531aea151b142f76431c68e619e430565011124565748513292
-  languageName: node
-  linkType: hard
-
 "@storybook/addon-outline@npm:8.6.12":
   version: 8.6.12
   resolution: "@storybook/addon-outline@npm:8.6.12"
@@ -11025,7 +11016,6 @@ __metadata:
     "@storybook/addon-essentials": "npm:^8.6.12"
     "@storybook/addon-interactions": "npm:^8.6.12"
     "@storybook/addon-links": "npm:^8.6.12"
-    "@storybook/addon-onboarding": "npm:^8.6.12"
     "@storybook/addon-themes": "npm:^8.6.12"
     "@storybook/addon-webpack5-compiler-swc": "npm:^3.0.0"
     "@storybook/blocks": "npm:^8.6.12"
