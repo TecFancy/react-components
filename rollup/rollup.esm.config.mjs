@@ -1,5 +1,7 @@
-import basicConfig from './rollup.config.mjs';
+import copy from 'rollup-plugin-copy';
 import excludeDependenciesFromBundle from 'rollup-plugin-exclude-dependencies-from-bundle';
+
+import basicConfig from './rollup.config.mjs';
 
 const config = {
   ...basicConfig,
@@ -9,7 +11,18 @@ const config = {
       format: 'es',
     },
   ],
-  plugins: [...basicConfig.plugins, excludeDependenciesFromBundle()],
+  plugins: [
+    ...basicConfig.plugins,
+    excludeDependenciesFromBundle(),
+    copy({
+      targets: [
+        {
+          src: 'src/styles/_variables.scss',
+          dest: 'dist/styles',
+        }
+      ],
+    }),
+  ],
 };
 
 export default config;
