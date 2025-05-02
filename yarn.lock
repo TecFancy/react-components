@@ -9929,13 +9929,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"normalize.css@npm:^8.0.1":
-  version: 8.0.1
-  resolution: "normalize.css@npm:8.0.1"
-  checksum: 10c0/4ddf56d1af5ca755fa5e692e718316d8758ecb792aa96e1ad206824b5810a043763d681d6f7697d46573515f5e9690038b4c91a95c1997567128815545fb8cd7
-  languageName: node
-  linkType: hard
-
 "npm-check-updates@npm:^18.0.1":
   version: 18.0.1
   resolution: "npm-check-updates@npm:18.0.1"
@@ -11065,7 +11058,6 @@ __metadata:
     lint-staged: "npm:>=15"
     msw: "npm:^2.7.5"
     msw-storybook-addon: "npm:^2.0.4"
-    normalize.css: "npm:^8.0.1"
     npm-check-updates: "npm:^18.0.1"
     pinst: "npm:>=3"
     postcss: "npm:^8.5.3"

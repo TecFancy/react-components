@@ -5,7 +5,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "main": "dist/es/index.js",
   "module": "dist/es/index.js",
   "types": "dist/es/index.d.ts",
@@ -35,8 +37,7 @@
     "@": "./src"
   },
   "dependencies": {
-    "classnames": "^2.5.1",
-    "normalize.css": "^8.0.1"
+    "classnames": "^2.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.27.1",
