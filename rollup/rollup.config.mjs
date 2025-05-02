@@ -30,6 +30,9 @@ const config = {
     json(),
     typescript({ tsconfigOverride: overrides }),
     sass({
+      // Set `api: "modern"` to remove `Deprecation Warning [legacy-js-api]: The legacy JS API is deprecated and will be removed in Dart Sass 2.0.0.`
+      // See: https://github.com/sass/dart-sass/issues/2352#issuecomment-2778594669
+      api: 'modern',
       output: 'dist/index.css',
       processor: css => postcss([postcssImport, autoprefixer, cssnano()])
         .process(css, { from: 'src/styles/index.scss' })

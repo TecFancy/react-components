@@ -1,15 +1,5 @@
-@font-face {
-  font-family: inter;
-  src: url('../statics/fonts/Inter-VariableFont_opsz,wght.ttf');
-}
-
-@import 'normalize.css';
-
-@import 'variables';
-
-* {
-  font-family: inter, serif;
-}
-
-@import '../components/Button/style';
-@import '../components/Anki/style';
+@use 'normalize' as *;
+@use 'global' as *;
+@use 'variables' as *;
+@use '../components/Button/style' as *;
+@use '../components/Anki/style' as *;
