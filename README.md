@@ -26,6 +26,12 @@ A modern, customizable React UI component library.
 
 ## Installation
 
+Ensure the following dependencies are installed in your project:
+
+- `react`: >= 16.8.0
+- `react-dom`: >= 16.8.0
+- `classnames`: >= 2.5.1
+
 ```bash
 # Using npm
 npm install react-components

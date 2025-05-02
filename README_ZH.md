@@ -26,6 +26,12 @@
 
 ## 安装
 
+确保你的项目中已经安装了以下依赖：
+
+- `react`: >= 16.8.0
+- `react-dom`: >= 16.8.0
+- `classnames`: >= 2.5.1
+
 ```bash
 # 使用 npm
 npm install react-components
