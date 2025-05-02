@@ -5,9 +5,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "main": "dist/index.es.js",
-  "module": "dist/index.es.js",
-  "types": "dist/index.d.ts",
+  "sideEffects": ["*.css"],
+  "main": "dist/es/index.js",
+  "module": "dist/es/index.js",
+  "types": "dist/es/index.d.ts",
   "files": [
     "dist"
   ],
