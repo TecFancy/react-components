@@ -1,15 +1,9 @@
 import React from 'react';
 import Base from './base';
 
-interface Props {
-  /**
-   * Whether to use night mode
-   * @default false
-   */
-  night_mode?: boolean;
-}
+import { SideProps } from './types';
 
-const FrontSide = ({ night_mode = false }: Props) => {
+const FrontSide = ({ night_mode = false }: SideProps) => {
   const mainElement = () => <Base />;
 
   return (

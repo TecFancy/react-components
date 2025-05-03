@@ -87,10 +87,13 @@ $third-text-night: #495057;
         padding: 20px 18px;
         border-radius: 12px;
         background-color: $card-background-color;
-        .en {
+        p {
           font-size: 18px;
           line-height: 24px;
           color: $primary-text;
+        }
+        p.zh {
+          display: none;
         }
       }
     }
@@ -102,6 +105,32 @@ $third-text-night: #495057;
       line-height: 17px;
       font-size: 15px;
       color: $third-text;
+    }
+  }
+}
+
+.back .main {
+  .inner {
+    .recite {
+      .paraphrase {
+        span {
+          display: none;
+        }
+        p {
+          display: block;
+          font-size: 18px;
+          line-height: 24px;
+          color: #2d3748;
+        }
+      }
+    }
+
+    .cards {
+      .example {
+        .zh {
+          display: block;
+        }
+      }
     }
   }
 }
