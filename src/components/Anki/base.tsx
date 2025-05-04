@@ -1,61 +1,178 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import classNames from 'classnames';
+
+type TabType =
+  | 'phraseCollocation'
+  | 'specialTransformation'
+  | 'derive'
+  | 'synonym'
+  | 'antonym'
+  | 'originalText';
 
 const Base = () => {
+  const [activeTab, setActiveTab] = useState<TabType | null>(null);
+  const [data, setData] = useState({
+    word: '',
+    phonetic: '',
+    meaning: '',
+    example: '',
+    exampleZh: '',
+    phraseCollocation: '',
+    specialTransformation: '',
+    derive: '',
+    synonym: '',
+    antonym: '',
+    originalText: '',
+  });
+
+  const phraseCollocationClass = classNames('phrase-collocation', {
+    active: activeTab === 'phraseCollocation',
+  });
+  const specialTransformationClass = classNames('special-transformation', {
+    active: activeTab === 'specialTransformation',
+  });
+  const deriveClass = classNames('derive', { active: activeTab === 'derive' });
+  const synonymClass = classNames('synonym', {
+    active: activeTab === 'synonym',
+  });
+  const antonymClass = classNames('antonym', {
+    active: activeTab === 'antonym',
+  });
+  const originalTextClass = classNames('original-text', {
+    active: activeTab === 'originalText',
+  });
+
+  const handleTabClick = (tabType: TabType) => {
+    setActiveTab(tabType);
+  };
+
+  useEffect(() => {
+    // 添加消息监听
+    const handleMessage = (event) => {
+      // 处理接收到的消息
+      if (event?.data && event?.data?.wordInfo) {
+        setData(event.data.wordInfo ?? null);
+      }
+    };
+
+    window.addEventListener('message', handleMessage);
+
+    // 清理监听器
+    return () => {
+      window.removeEventListener('message', handleMessage);
+    };
+  }, []);
+
+  useEffect(() => {
+    const tabTypes: TabType[] = [
+      'phraseCollocation',
+      'specialTransformation',
+      'derive',
+      'synonym',
+      'antonym',
+      'originalText',
+    ];
+
+    // 找到第一个有数据的标签
+    const firstAvailableTab = tabTypes.find((tab) => data[tab]);
+    if (firstAvailableTab) {
+      setActiveTab(firstAvailableTab);
+    }
+  }, [data]);
+
   return (
     <main className="main">
       <div className="inner">
         <div className="recite">
-          <p className="word">hurry</p>
-          <p className="phonetic">/ˈhʌri/</p>
+          <p className="word">{data?.word ?? ''}</p>
+          <p className="phonetic">{data?.phonetic ?? ''}</p>
           <div className="paraphrase">
             <span />
             <span />
-            <p>v. 匆忙</p>
+            <p>{data?.meaning ?? ''}</p>
           </div>
         </div>
 
         <div className="cards">
           <div className="example">
-            <p className="en">
-              I hurried to the ticket office. ‘May I have two tickets please?’ I
-              asked.
-            </p>
-            <p className="zh">我匆匆赶到售票处，问："我可以买两张票吗？"</p>
+            <p className="en">{data?.example ?? ''}</p>
+            {data?.exampleZh && <p className="zh">{data.exampleZh}</p>}
           </div>
         </div>
 
         <div className="cards">
           <div className="tabs">
             <div className="content">
-              <div className="active">
-                <p>
-                  词词组搭配内容词组搭配内容词组搭配内容词组搭配内容组搭配内容
-                </p>
-                <p>词组搭配内容</p>
-                <p>词组搭配内容</p>
-                <p>词组搭配内容</p>
-                <p>词组搭配内容</p>
-                <p>词组搭配内容</p>
-                <p>词组搭配内容</p>
-                <p>词组搭配内容</p>
-                <p>词组搭配内容</p>
-                <p>词组搭配内容</p>
-                <p>词组搭配内容</p>
-                <p>词组搭配内容</p>
-              </div>
-              <div className="">特殊变形内容</div>
-              <div className="">派生内容</div>
-              <div className="">近义内容</div>
-              <div className="">反义内容</div>
-              <div className="">原文内容</div>
+              {data?.phraseCollocation && (
+                <div className={phraseCollocationClass}>
+                  {data.phraseCollocation}
+                </div>
+              )}
+              {data?.specialTransformation && (
+                <div className={specialTransformationClass}>
+                  {data.specialTransformation}
+                </div>
+              )}
+              {data?.derive && <div className={deriveClass}>{data.derive}</div>}
+              {data?.synonym && (
+                <div className={synonymClass}>{data.synonym}</div>
+              )}
+              {data?.antonym && (
+                <div className={antonymClass}>{data.antonym}</div>
+              )}
+              {data?.originalText && (
+                <div className={originalTextClass}>{data.originalText}</div>
+              )}
             </div>
             <div className="buttons">
-              <button>词组搭配</button>
-              <button className="active">特殊变形</button>
-              <button>派生</button>
-              <button>近义</button>
-              <button>反义</button>
-              <button>原文</button>
+              {data?.phraseCollocation && (
+                <button
+                  className={phraseCollocationClass}
+                  onClick={() => handleTabClick('phraseCollocation')}
+                >
+                  词组搭配
+                </button>
+              )}
+              {data?.specialTransformation && (
+                <button
+                  className={specialTransformationClass}
+                  onClick={() => handleTabClick('specialTransformation')}
+                >
+                  特殊变形
+                </button>
+              )}
+              {data?.derive && (
+                <button
+                  className={deriveClass}
+                  onClick={() => handleTabClick('derive')}
+                >
+                  派生
+                </button>
+              )}
+              {data?.synonym && (
+                <button
+                  className={synonymClass}
+                  onClick={() => handleTabClick('synonym')}
+                >
+                  近义
+                </button>
+              )}
+              {data?.antonym && (
+                <button
+                  className={antonymClass}
+                  onClick={() => handleTabClick('antonym')}
+                >
+                  反义
+                </button>
+              )}
+              {data?.originalText && (
+                <button
+                  className={originalTextClass}
+                  onClick={() => handleTabClick('originalText')}
+                >
+                  原文
+                </button>
+              )}
             </div>
           </div>
         </div>
