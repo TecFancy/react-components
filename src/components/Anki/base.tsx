@@ -24,6 +24,42 @@ const Base = () => {
           </div>
         </div>
 
+        <div className="cards">
+          <div className="tabs">
+            <div className="content">
+              <div className="active">
+                <p>
+                  词词组搭配内容词组搭配内容词组搭配内容词组搭配内容组搭配内容
+                </p>
+                <p>词组搭配内容</p>
+                <p>词组搭配内容</p>
+                <p>词组搭配内容</p>
+                <p>词组搭配内容</p>
+                <p>词组搭配内容</p>
+                <p>词组搭配内容</p>
+                <p>词组搭配内容</p>
+                <p>词组搭配内容</p>
+                <p>词组搭配内容</p>
+                <p>词组搭配内容</p>
+                <p>词组搭配内容</p>
+              </div>
+              <div className="">特殊变形内容</div>
+              <div className="">派生内容</div>
+              <div className="">近义内容</div>
+              <div className="">反义内容</div>
+              <div className="">原文内容</div>
+            </div>
+            <div className="buttons">
+              <button>词组搭配</button>
+              <button className="active">特殊变形</button>
+              <button>派生</button>
+              <button>近义</button>
+              <button>反义</button>
+              <button>原文</button>
+            </div>
+          </div>
+        </div>
+
         <p className="tags">NEC::Lesson19</p>
       </div>
     </main>
