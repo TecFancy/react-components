@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
+import { SideProps } from './types';
 
 type TabType =
   | 'phraseCollocation'
@@ -9,21 +10,28 @@ type TabType =
   | 'antonym'
   | 'originalText';
 
-const Base = () => {
+interface Props {
+  data?: SideProps['data'];
+}
+
+const Base = (props: Props) => {
   const [activeTab, setActiveTab] = useState<TabType | null>(null);
-  const [data, setData] = useState({
-    word: '',
-    phonetic: '',
-    meaning: '',
-    example: '',
-    exampleZh: '',
-    phraseCollocation: '',
-    specialTransformation: '',
-    derive: '',
-    synonym: '',
-    antonym: '',
-    originalText: '',
-  });
+  const [data, setData] = useState(
+    props?.data ?? {
+      word: '',
+      phonetic: '',
+      meaning: '',
+      example: '',
+      exampleZh: '',
+      phraseCollocation: '',
+      specialTransformation: '',
+      derive: '',
+      synonym: '',
+      antonym: '',
+      originalText: '',
+      tags: '',
+    }
+  );
 
   const phraseCollocationClass = classNames('phrase-collocation', {
     active: activeTab === 'phraseCollocation',
@@ -42,6 +50,16 @@ const Base = () => {
     active: activeTab === 'originalText',
   });
 
+  // 检查是否有任何 tab 内容
+  const hasTabContent = !!(
+    data?.phraseCollocation ||
+    data?.specialTransformation ||
+    data?.derive ||
+    data?.synonym ||
+    data?.antonym ||
+    data?.originalText
+  );
+
   const handleTabClick = (tabType: TabType) => {
     setActiveTab(tabType);
   };
@@ -50,7 +68,7 @@ const Base = () => {
     // 添加消息监听
     const handleMessage = (event) => {
       // 处理接收到的消息
-      if (event?.data && event?.data?.wordInfo) {
+      if (event?.data?.wordInfo) {
         setData(event.data.wordInfo ?? null);
       }
     };
@@ -100,84 +118,88 @@ const Base = () => {
           </div>
         </div>
 
-        <div className="cards">
-          <div className="tabs">
-            <div className="content">
-              {data?.phraseCollocation && (
-                <div className={phraseCollocationClass}>
-                  {data.phraseCollocation}
-                </div>
-              )}
-              {data?.specialTransformation && (
-                <div className={specialTransformationClass}>
-                  {data.specialTransformation}
-                </div>
-              )}
-              {data?.derive && <div className={deriveClass}>{data.derive}</div>}
-              {data?.synonym && (
-                <div className={synonymClass}>{data.synonym}</div>
-              )}
-              {data?.antonym && (
-                <div className={antonymClass}>{data.antonym}</div>
-              )}
-              {data?.originalText && (
-                <div className={originalTextClass}>{data.originalText}</div>
-              )}
-            </div>
-            <div className="buttons">
-              {data?.phraseCollocation && (
-                <button
-                  className={phraseCollocationClass}
-                  onClick={() => handleTabClick('phraseCollocation')}
-                >
-                  词组搭配
-                </button>
-              )}
-              {data?.specialTransformation && (
-                <button
-                  className={specialTransformationClass}
-                  onClick={() => handleTabClick('specialTransformation')}
-                >
-                  特殊变形
-                </button>
-              )}
-              {data?.derive && (
-                <button
-                  className={deriveClass}
-                  onClick={() => handleTabClick('derive')}
-                >
-                  派生
-                </button>
-              )}
-              {data?.synonym && (
-                <button
-                  className={synonymClass}
-                  onClick={() => handleTabClick('synonym')}
-                >
-                  近义
-                </button>
-              )}
-              {data?.antonym && (
-                <button
-                  className={antonymClass}
-                  onClick={() => handleTabClick('antonym')}
-                >
-                  反义
-                </button>
-              )}
-              {data?.originalText && (
-                <button
-                  className={originalTextClass}
-                  onClick={() => handleTabClick('originalText')}
-                >
-                  原文
-                </button>
-              )}
+        {hasTabContent && (
+          <div className="cards">
+            <div className="tabs">
+              <div className="content">
+                {data?.phraseCollocation && (
+                  <div className={phraseCollocationClass}>
+                    {data.phraseCollocation}
+                  </div>
+                )}
+                {data?.specialTransformation && (
+                  <div className={specialTransformationClass}>
+                    {data.specialTransformation}
+                  </div>
+                )}
+                {data?.derive && (
+                  <div className={deriveClass}>{data.derive}</div>
+                )}
+                {data?.synonym && (
+                  <div className={synonymClass}>{data.synonym}</div>
+                )}
+                {data?.antonym && (
+                  <div className={antonymClass}>{data.antonym}</div>
+                )}
+                {data?.originalText && (
+                  <div className={originalTextClass}>{data.originalText}</div>
+                )}
+              </div>
+              <div className="buttons">
+                {data?.phraseCollocation && (
+                  <button
+                    className={phraseCollocationClass}
+                    onClick={() => handleTabClick('phraseCollocation')}
+                  >
+                    词组搭配
+                  </button>
+                )}
+                {data?.specialTransformation && (
+                  <button
+                    className={specialTransformationClass}
+                    onClick={() => handleTabClick('specialTransformation')}
+                  >
+                    特殊变形
+                  </button>
+                )}
+                {data?.derive && (
+                  <button
+                    className={deriveClass}
+                    onClick={() => handleTabClick('derive')}
+                  >
+                    派生
+                  </button>
+                )}
+                {data?.synonym && (
+                  <button
+                    className={synonymClass}
+                    onClick={() => handleTabClick('synonym')}
+                  >
+                    近义
+                  </button>
+                )}
+                {data?.antonym && (
+                  <button
+                    className={antonymClass}
+                    onClick={() => handleTabClick('antonym')}
+                  >
+                    反义
+                  </button>
+                )}
+                {data?.originalText && (
+                  <button
+                    className={originalTextClass}
+                    onClick={() => handleTabClick('originalText')}
+                  >
+                    原文
+                  </button>
+                )}
+              </div>
             </div>
           </div>
-        </div>
+        )}
 
-        <p className="tags">NEC::Lesson19</p>
+        {data?.tags && <p className="tags">{data.tags}</p>}
       </div>
     </main>
   );

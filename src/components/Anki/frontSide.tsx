@@ -3,8 +3,8 @@ import Base from './base';
 
 import { SideProps } from './types';
 
-const FrontSide = ({ night_mode = false }: SideProps) => {
-  const mainElement = () => <Base />;
+const FrontSide = ({ night_mode = false, data }: SideProps) => {
+  const mainElement = () => <Base data={data} />;
 
   return (
     <div className="container">

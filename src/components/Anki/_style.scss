@@ -24,9 +24,11 @@ $third-text-night: #495057;
 
 .container {
   width: 412px;
+  height: 100%;
 }
 
 .main {
+  height: 100%;
   background-color: $background-color;
 
   p {
