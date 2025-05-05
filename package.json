@@ -16,7 +16,7 @@
     "dist"
   ],
   "scripts": {
-    "dev": "concurrently \"storybook dev -p 6006\" \"yarn watch:es\"",
+    "dev": "storybook dev -p 6006",
     "watch:es": "nodemon",
     "build": "yarn clean && concurrently \"yarn build:es\" \"yarn build:storybook\"",
     "clean": "rimraf ./dist",
@@ -39,6 +39,9 @@
   },
   "imports": {
     "@": "./src"
+  },
+  "dependencies": {
+    "html-react-parser": "^5.2.3"
   },
   "devDependencies": {
     "@babel/core": "^7.27.1",
@@ -136,8 +139,5 @@
     "workerDirectory": [
       "public"
     ]
-  },
-  "dependencies": {
-    "dompurify": "^3.2.5"
   }
 }

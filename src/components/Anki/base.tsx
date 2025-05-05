@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
-import DOMPurify from 'dompurify';
+import parse from 'html-react-parser';
 import { SideProps } from './types';
 
 type TabType =
@@ -53,11 +53,11 @@ const Base = (props: Props) => {
 
   // 检查是否有任何 tab 内容
   const hasTabContent = !!(
-    data?.phraseCollocation ??
-    data?.specialTransformation ??
-    data?.derive ??
-    data?.synonym ??
-    data?.antonym ??
+    data?.phraseCollocation ||
+    data?.specialTransformation ||
+    data?.derive ||
+    data?.synonym ||
+    data?.antonym ||
     data?.originalText
   );
 
@@ -103,45 +103,21 @@ const Base = (props: Props) => {
     <main className="main">
       <div className="inner">
         <div className="recite">
-          <p
-            className="word"
-            dangerouslySetInnerHTML={{
-              __html: DOMPurify.sanitize(data?.word ?? ''),
-            }}
-          />
-          <p
-            className="phonetic"
-            dangerouslySetInnerHTML={{
-              __html: DOMPurify.sanitize(data?.phonetic ?? ''),
-            }}
-          />
+          <p className="word">{parse(data?.word ?? '')}</p>
+          <p className="phonetic">{parse(data?.phonetic ?? '')}</p>
           <div className="paraphrase">
             <span />
             <span />
-            <p
-              dangerouslySetInnerHTML={{
-                __html: DOMPurify.sanitize(data?.meaning ?? ''),
-              }}
-            />
+            <p>{parse(data?.meaning ?? '')}</p>
           </div>
         </div>
 
         {data?.example && (
           <div className="cards">
             <div className="example">
-              <p
-                className="en"
-                dangerouslySetInnerHTML={{
-                  __html: DOMPurify.sanitize(data?.example ?? ''),
-                }}
-              />
+              <p className="en">{parse(data?.example ?? '')}</p>
               {data?.exampleZh && (
-                <p
-                  className="zh"
-                  dangerouslySetInnerHTML={{
-                    __html: DOMPurify.sanitize(data.exampleZh),
-                  }}
-                />
+                <p className="zh">{parse(data.exampleZh ?? '')}</p>
               )}
             </div>
           </div>
@@ -152,52 +128,28 @@ const Base = (props: Props) => {
             <div className="tabs">
               <div className="content">
                 {data?.phraseCollocation && (
-                  <div
-                    className={phraseCollocationClass}
-                    dangerouslySetInnerHTML={{
-                      __html: DOMPurify.sanitize(data.phraseCollocation),
-                    }}
-                  />
+                  <div className={phraseCollocationClass}>
+                    {parse(data.phraseCollocation)}
+                  </div>
                 )}
                 {data?.specialTransformation && (
-                  <div
-                    className={specialTransformationClass}
-                    dangerouslySetInnerHTML={{
-                      __html: DOMPurify.sanitize(data.specialTransformation),
-                    }}
-                  />
+                  <div className={specialTransformationClass}>
+                    {parse(data.specialTransformation)}
+                  </div>
                 )}
                 {data?.derive && (
-                  <div
-                    className={deriveClass}
-                    dangerouslySetInnerHTML={{
-                      __html: DOMPurify.sanitize(data.derive),
-                    }}
-                  />
+                  <div className={deriveClass}>{parse(data.derive)}</div>
                 )}
                 {data?.synonym && (
-                  <div
-                    className={synonymClass}
-                    dangerouslySetInnerHTML={{
-                      __html: DOMPurify.sanitize(data.synonym),
-                    }}
-                  />
+                  <div className={synonymClass}>{parse(data.synonym)}</div>
                 )}
                 {data?.antonym && (
-                  <div
-                    className={antonymClass}
-                    dangerouslySetInnerHTML={{
-                      __html: DOMPurify.sanitize(data.antonym),
-                    }}
-                  />
+                  <div className={antonymClass}>{parse(data.antonym)}</div>
                 )}
                 {data?.originalText && (
-                  <div
-                    className={originalTextClass}
-                    dangerouslySetInnerHTML={{
-                      __html: DOMPurify.sanitize(data.originalText ?? ''),
-                    }}
-                  />
+                  <div className={originalTextClass}>
+                    {parse(data.originalText)}
+                  </div>
                 )}
               </div>
               <div className="buttons">
