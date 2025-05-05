@@ -18,7 +18,7 @@
   "scripts": {
     "dev": "storybook dev -p 6006",
     "watch:es": "nodemon",
-    "build": "yarn clean && concurrently \"yarn build:es\" \"yarn build:storybook\"",
+    "build": "pnpm clean && concurrently \"pnpm build:es\" \"pnpm build:storybook\"",
     "clean": "rimraf ./dist",
     "build:es": "rollup --config rollup/rollup.esm.config.mjs",
     "build:storybook": "storybook build",
@@ -28,7 +28,7 @@
     "test:watch": "jest --watch",
     "test:storybook": "test-storybook",
     "ncu": "ncu",
-    "postinstall": "node -e \"try { require('husky').install() } catch (e) { if (e.code !== 'MODULE_NOT_FOUND') throw e }\"",
+    "prepare": "husky",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
     "prepack": "pinst --disable",
@@ -134,7 +134,7 @@
       "last 1 safari version"
     ]
   },
-  "packageManager": "yarn@4.3.1",
+  "packageManager": "pnpm@10.10.0",
   "msw": {
     "workerDirectory": [
       "public"
