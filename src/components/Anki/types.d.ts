@@ -12,6 +12,7 @@ export interface SideProps {
     antonym?: string;
     originalText?: string;
     tags?: string;
+    side?: 'front' | 'back';
   }>;
   /**
    * Whether to use night mode
