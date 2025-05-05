@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
+import DOMPurify from 'dompurify';
 import { SideProps } from './types';
 
 type TabType =
@@ -102,20 +103,46 @@ const Base = (props: Props) => {
     <main className="main">
       <div className="inner">
         <div className="recite">
-          <p className="word">{data?.word ?? ''}</p>
-          <p className="phonetic">{data?.phonetic ?? ''}</p>
+          <p
+            className="word"
+            dangerouslySetInnerHTML={{
+              __html: DOMPurify.sanitize(data?.word ?? ''),
+            }}
+          />
+          <p
+            className="phonetic"
+            dangerouslySetInnerHTML={{
+              __html: DOMPurify.sanitize(data?.phonetic ?? ''),
+            }}
+          />
           <div className="paraphrase">
             <span />
             <span />
-            <p>{data?.meaning ?? ''}</p>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(data?.meaning ?? ''),
+              }}
+            />
           </div>
         </div>
 
         {data?.example && (
           <div className="cards">
             <div className="example">
-              <p className="en">{data?.example ?? ''}</p>
-              {data?.exampleZh && <p className="zh">{data.exampleZh}</p>}
+              <p
+                className="en"
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(data?.example ?? ''),
+                }}
+              />
+              {data?.exampleZh && (
+                <p
+                  className="zh"
+                  dangerouslySetInnerHTML={{
+                    __html: DOMPurify.sanitize(data.exampleZh),
+                  }}
+                />
+              )}
             </div>
           </div>
         )}
@@ -125,26 +152,52 @@ const Base = (props: Props) => {
             <div className="tabs">
               <div className="content">
                 {data?.phraseCollocation && (
-                  <div className={phraseCollocationClass}>
-                    {data.phraseCollocation}
-                  </div>
+                  <div
+                    className={phraseCollocationClass}
+                    dangerouslySetInnerHTML={{
+                      __html: DOMPurify.sanitize(data.phraseCollocation),
+                    }}
+                  />
                 )}
                 {data?.specialTransformation && (
-                  <div className={specialTransformationClass}>
-                    {data.specialTransformation}
-                  </div>
+                  <div
+                    className={specialTransformationClass}
+                    dangerouslySetInnerHTML={{
+                      __html: DOMPurify.sanitize(data.specialTransformation),
+                    }}
+                  />
                 )}
                 {data?.derive && (
-                  <div className={deriveClass}>{data.derive}</div>
+                  <div
+                    className={deriveClass}
+                    dangerouslySetInnerHTML={{
+                      __html: DOMPurify.sanitize(data.derive),
+                    }}
+                  />
                 )}
                 {data?.synonym && (
-                  <div className={synonymClass}>{data.synonym}</div>
+                  <div
+                    className={synonymClass}
+                    dangerouslySetInnerHTML={{
+                      __html: DOMPurify.sanitize(data.synonym),
+                    }}
+                  />
                 )}
                 {data?.antonym && (
-                  <div className={antonymClass}>{data.antonym}</div>
+                  <div
+                    className={antonymClass}
+                    dangerouslySetInnerHTML={{
+                      __html: DOMPurify.sanitize(data.antonym),
+                    }}
+                  />
                 )}
                 {data?.originalText && (
-                  <div className={originalTextClass}>{data.originalText}</div>
+                  <div
+                    className={originalTextClass}
+                    dangerouslySetInnerHTML={{
+                      __html: DOMPurify.sanitize(data.originalText ?? ''),
+                    }}
+                  />
                 )}
               </div>
               <div className="buttons">
