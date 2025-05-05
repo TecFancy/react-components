@@ -52,11 +52,11 @@ const Base = (props: Props) => {
 
   // 检查是否有任何 tab 内容
   const hasTabContent = !!(
-    data?.phraseCollocation ||
-    data?.specialTransformation ||
-    data?.derive ||
-    data?.synonym ||
-    data?.antonym ||
+    data?.phraseCollocation ??
+    data?.specialTransformation ??
+    data?.derive ??
+    data?.synonym ??
+    data?.antonym ??
     data?.originalText
   );
 
@@ -111,12 +111,14 @@ const Base = (props: Props) => {
           </div>
         </div>
 
-        <div className="cards">
-          <div className="example">
-            <p className="en">{data?.example ?? ''}</p>
-            {data?.exampleZh && <p className="zh">{data.exampleZh}</p>}
+        {data?.example && (
+          <div className="cards">
+            <div className="example">
+              <p className="en">{data?.example ?? ''}</p>
+              {data?.exampleZh && <p className="zh">{data.exampleZh}</p>}
+            </div>
           </div>
-        </div>
+        )}
 
         {hasTabContent && (
           <div className="cards">
