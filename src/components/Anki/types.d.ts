@@ -5,18 +5,18 @@ export interface SideProps {
     meaning: string;
     example: string;
     exampleZh: string;
-    phraseCollocation?: string;
-    specialTransformation?: string;
-    derive?: string;
-    synonym?: string;
-    antonym?: string;
-    originalText?: string;
-    tags?: string;
-    side?: 'front' | 'back';
+    phraseCollocation: string;
+    specialTransformation: string;
+    derive: string;
+    synonym: string;
+    antonym: string;
+    originalText: string;
+    tags: string;
+    side: 'front' | 'back';
+    /**
+     * Whether to use night mode
+     * @default false
+     */
+    nightMode: 'true' | 'false';
   }>;
-  /**
-   * Whether to use night mode
-   * @default false
-   */
-  night_mode?: boolean;
 }

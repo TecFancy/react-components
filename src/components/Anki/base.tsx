@@ -16,23 +16,8 @@ interface Props {
 }
 
 const Base = (props: Props) => {
+  const { data } = props;
   const [activeTab, setActiveTab] = useState<TabType | null>(null);
-  const [data, setData] = useState(
-    props?.data ?? {
-      word: '',
-      phonetic: '',
-      meaning: '',
-      example: '',
-      exampleZh: '',
-      phraseCollocation: '',
-      specialTransformation: '',
-      derive: '',
-      synonym: '',
-      antonym: '',
-      originalText: '',
-      tags: '',
-    }
-  );
 
   const phraseCollocationClass = classNames('phrase-collocation', {
     active: activeTab === 'phraseCollocation',
@@ -66,23 +51,6 @@ const Base = (props: Props) => {
   };
 
   useEffect(() => {
-    // 添加消息监听
-    const handleMessage = (event) => {
-      // 处理接收到的消息
-      if (event?.data?.wordInfo) {
-        setData(event.data.wordInfo ?? null);
-      }
-    };
-
-    window.addEventListener('message', handleMessage);
-
-    // 清理监听器
-    return () => {
-      window.removeEventListener('message', handleMessage);
-    };
-  }, []);
-
-  useEffect(() => {
     const tabTypes: TabType[] = [
       'phraseCollocation',
       'specialTransformation',
@@ -93,7 +61,9 @@ const Base = (props: Props) => {
     ];
 
     // 找到第一个有数据的标签
-    const firstAvailableTab = tabTypes.find((tab) => data[tab]);
+    const firstAvailableTab = tabTypes.find(
+      (tab) => data?.[tab] as unknown as any
+    );
     if (firstAvailableTab) {
       setActiveTab(firstAvailableTab);
     }

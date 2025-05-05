@@ -3,13 +3,13 @@ import Base from './base';
 
 import { SideProps } from './types';
 
-const BackSide = ({ night_mode = false, data }: SideProps) => {
+const BackSide = ({ data }: SideProps) => {
   const mainElement = () => <Base data={data} />;
 
   return (
     <div className="back">
       <div className="container">
-        {night_mode ? (
+        {data?.nightMode === 'true' ? (
           <div className="night_mode">{mainElement()}</div>
         ) : (
           mainElement()
