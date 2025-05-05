@@ -2,5 +2,5 @@
   "watch": ["src"],
   "ext": "ts,tsx,js,jsx,scss,css",
   "ignore": ["node_modules", "dist", ".github", ".husky"],
-  "exec": "yarn build:es"
+  "exec": "pnpm build:es"
 }
