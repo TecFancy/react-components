@@ -13,7 +13,6 @@ const data = {
   synonym: '近义词内容',
   antonym: '反义词内容',
   originalText: '原文内容',
-  tags: 'NCE::Lesson19',
   side: 'back',
   nightMode: 'false',
 };
