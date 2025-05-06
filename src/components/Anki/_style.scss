@@ -28,7 +28,7 @@ $third-text-night: #495057;
 }
 
 .container {
-  min-width: min(100%, 390px); /* 至少 390px，但不超过父容器 */
+  min-width: 390px;
   max-width: 65ch;
   height: 100%;
   text-align: justify;

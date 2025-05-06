@@ -180,9 +180,7 @@ const Base = (props: Props) => {
           </div>
         )}
 
-        {data?.tags && data?.side === 'back' && (
-          <p className="tags">{data.tags}</p>
-        )}
+        {data?.tags && <p className="tags">{data.tags}</p>}
       </div>
     </main>
   );
