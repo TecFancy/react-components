@@ -118,7 +118,7 @@ $third-text-night: #495057;
       }
       .tabs {
         display: none;
-        padding: 20px 13px 8px;
+        padding: 20px 13px 0;
         .content {
           align-self: stretch;
           padding: 0 5px;
@@ -152,6 +152,7 @@ $third-text-night: #495057;
           border-radius: 4px;
           background-color: inherit;
           align-self: stretch;
+          padding: 8px 0;
           button {
             height: 24px;
             line-height: 24px;
