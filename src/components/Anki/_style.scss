@@ -22,9 +22,17 @@ $button-color-night-active: #ced4da;
 $third-text: #a0aec0;
 $third-text-night: #495057;
 
+.custom-br {
+  display: block; /* 让 <br> 变成块级元素 */
+  content: ''; /* 伪元素内容 */
+}
+
 .container {
-  width: 100%;
+  min-width: min(100%, 390px); /* 至少 390px，但不超过父容器 */
+  max-width: 65ch;
   height: 100%;
+  text-align: justify;
+  letter-spacing: -0.015em;
 }
 
 .main {
@@ -52,13 +60,13 @@ $third-text-night: #495057;
       .word {
         font-size: 36px;
         font-weight: bold;
-        line-height: 44px;
+        line-height: 1.5;
         color: $primary-text;
       }
 
       .phonetic {
         padding: 12px 0;
-        line-height: 17px;
+        line-height: 1.5;
         font-size: 16px;
         color: #4a5568;
       }
@@ -101,7 +109,7 @@ $third-text-night: #495057;
         background-color: $card-background-color;
         p {
           font-size: 18px;
-          line-height: 24px;
+          line-height: 1.5;
           color: $primary-text;
         }
         p.zh {
@@ -112,22 +120,24 @@ $third-text-night: #495057;
         display: none;
         padding: 20px 13px 8px;
         .content {
+          align-self: stretch;
           padding: 0 5px;
-          width: 100%;
-          min-height: 250px;
+          min-height: 150px;
           overflow: auto;
           > div {
             display: none;
+            font-size: 16px;
+            line-height: 1.5;
+            text-rendering: optimizeLegibility; /* 优化抗锯齿 */
+            hyphens: auto; /* 自动连字符换行（英文场景） */
+            word-break: break-word; /* 防止长单词溢出 */
+            margin-top: 0; /* 避免段落上方多余间距 */
             &.active {
               display: flex;
               flex-direction: column;
               justify-content: center;
               align-items: flex-start;
               row-gap: 4px;
-            }
-            > p {
-              align-self: stretch;
-              font-size: 16px;
             }
           }
         }
@@ -154,7 +164,7 @@ $third-text-night: #495057;
       align-self: stretch;
       text-align: right;
       padding-right: 18px;
-      line-height: 17px;
+      line-height: 1.5;
       font-size: 15px;
       color: $third-text;
     }
@@ -171,7 +181,7 @@ $third-text-night: #495057;
         p {
           display: block;
           font-size: 18px;
-          line-height: 24px;
+          line-height: 1.5;
           color: #2d3748;
         }
       }
