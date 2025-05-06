@@ -14,3 +14,5 @@ src/stories
 .pnp.cjs
 .pnp.loader.mjs
 stats.html
+
+public
