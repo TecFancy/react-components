@@ -46,6 +46,10 @@ const Base = (props: Props) => {
     data?.originalText
   );
 
+  const parsedText = (str?: string) => {
+    return parse((str ?? '').replace(/<br>/g, '<br class="custom-br" />'));
+  };
+
   const handleTabClick = (tabType: TabType) => {
     setActiveTab(tabType);
   };
@@ -99,26 +103,26 @@ const Base = (props: Props) => {
               <div className="content">
                 {data?.phraseCollocation && (
                   <div className={phraseCollocationClass}>
-                    {parse(data.phraseCollocation)}
+                    {parsedText(data.phraseCollocation)}
                   </div>
                 )}
                 {data?.specialTransformation && (
                   <div className={specialTransformationClass}>
-                    {parse(data.specialTransformation)}
+                    {parsedText(data.specialTransformation)}
                   </div>
                 )}
                 {data?.derive && (
-                  <div className={deriveClass}>{parse(data.derive)}</div>
+                  <div className={deriveClass}>{parsedText(data.derive)}</div>
                 )}
                 {data?.synonym && (
-                  <div className={synonymClass}>{parse(data.synonym)}</div>
+                  <div className={synonymClass}>{parsedText(data.synonym)}</div>
                 )}
                 {data?.antonym && (
-                  <div className={antonymClass}>{parse(data.antonym)}</div>
+                  <div className={antonymClass}>{parsedText(data.antonym)}</div>
                 )}
                 {data?.originalText && (
                   <div className={originalTextClass}>
-                    {parse(data.originalText)}
+                    {parsedText(data.originalText)}
                   </div>
                 )}
               </div>

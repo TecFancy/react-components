@@ -22,6 +22,11 @@ $button-color-night-active: #ced4da;
 $third-text: #a0aec0;
 $third-text-night: #495057;
 
+.custom-br {
+  display: block; /* 让 <br> 变成块级元素 */
+  content: ''; /* 伪元素内容 */
+}
+
 .container {
   min-width: min(100%, 390px); /* 至少 390px，但不超过父容器 */
   max-width: 65ch;
