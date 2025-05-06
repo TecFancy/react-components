@@ -146,6 +146,12 @@ $third-text-night: #495057;
           justify-content: flex-start;
           align-items: center;
           column-gap: 4px;
+          position: sticky;
+          bottom: 0;
+          margin-top: auto; /* 让按钮在底部 */
+          border-radius: 4px;
+          background-color: inherit;
+          align-self: stretch;
           button {
             height: 24px;
             line-height: 24px;
