@@ -1,4 +1,4 @@
-# README
+# React Components
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=TecFancy_react-components&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=TecFancy_react-components)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=TecFancy_react-components&metric=bugs)](https://sonarcloud.io/summary/new_code?id=TecFancy_react-components)
@@ -13,15 +13,70 @@
 
 [English](./README.md) | [简体中文](./README_ZH.md)
 
+A modern, customizable React UI component library.
+
+## Features
+
+- 🔧 TypeScript Support - Full type definitions included
+- 🎨 Customizable Themes - Support for multiple theme modes including dark mode
+- 📦 On-Demand Loading - Import components individually to optimize bundle size
+- 🌈 Style Isolation - SCSS modules for style management
+- 🧩 Rich Components - Various commonly used components like Button with multiple sizes and states
+- 📚 Storybook Documentation - Comprehensive component examples and docs
+
+## Installation
+
+Ensure the following dependencies are installed in your project:
+
+- `react`: >= 16.8.0
+- `react-dom`: >= 16.8.0
+- `classnames`: >= 2.5.1
+
+```bash
+# Using npm
+npm install react-components
+
+# Using yarn
+yarn add react-components
+```
+
 ## Quick Start
 
-This quick guide will show you how to run the project in your local development environment.
+```tsx
+import React from 'react';
+import { Button } from 'react-components';
+import 'react-components/dist/es/styles/index.css'; // Import styles
+
+const App = () => (
+  <Button size="large" theme="primary">
+    Click Me
+  </Button>
+);
+
+export default App;
+```
+
+## Custom Themes
+
+The component library supports theme customization. You can use the provided variables file:
+
+```scss
+// Import variables
+@use 'react-components/dist/es/styles/_variables.scss' as *;
+
+// Customize variables
+$primary-color: #1890ff;
+```
+
+## Development Guide
+
+This quick guide will help you set up the project in your local development environment.
 
 ### System Requirements
 
 - `Node.js`: >= 20.10.0
 
-After installing the Node.js development environment, you also need to install the `yarn` package management tool.
+After installing Node.js, you'll need to install the `yarn` package manager:
 
 ```bash
 npm install -g yarn
@@ -35,7 +90,7 @@ yarn install
 
 ## Script Commands
 
-The project contains some commonly used script commands, which you can run in the project root directory.
+The project includes several commonly used scripts that can be executed from the project root.
 
 ### Start Project
 
@@ -43,48 +98,57 @@ The project contains some commonly used script commands, which you can run in th
 yarn start
 ```
 
-Running this command will start the project's development server, and you can access the project in the browser at `http://localhost:6006`.
+This command launches the development server. Access the project at `http://localhost:6006` in your browser.
 
 ### Build Project
 
-To build the final component library, you can run the following command:
+To build the final component library, run:
 
 ```bash
 yarn build
 ```
 
-If you want to build the documentation site for the component library, you can run the following command:
+To build the documentation site for the component library, run:
 
 ```bash
 yarn build:storybook
 ```
 
-### Unit Test
+### Unit Testing
 
 ```bash
 yarn test
 ```
 
-This command will run the unit tests once, and you can also start the test watch mode:
+This command runs unit tests once. You can also start test watch mode:
 
 ```bash
 yarn test:watch
 ```
 
-### Check for New Dependency Versions
+### Check Dependency Updates
 
 ```bash
 yarn ncu
 ```
 
-Running this command will check if there are new versions of third-party libraries in the project, and you can update the dependencies with the following command:
+This command checks for new versions of third-party dependencies. Update dependencies with:
 
 ```bash
 yarn ncu -u
 ```
 
-This command will update the dependencies in `package.json` to the latest version. However, before updating the dependency version, you need to ensure that the latest dependency version is a major version update, otherwise it may cause the project to fail to run normally.
+This updates dependencies in `package.json` to their latest versions. Before updating, ensure major version updates won't break the project.
 
-After updating the dependency version to the latest version, you need to run `yarn install` again to install the latest dependencies.
+After updating dependencies, run `yarn install` to install the latest versions.
+
+## Tech Stack
+
+- React
+- TypeScript
+- SCSS
+- Rollup
+- Storybook
+- Jest
 
 Happy coding ;-)

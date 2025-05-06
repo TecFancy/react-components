@@ -10,14 +10,25 @@ $primary-text-night: #adb5bd;
 $secondary-text: #4a5568;
 $secondary-text-night: #98a2b3;
 
+$button-background-color: #dee2e6;
+$button-background-color-night: #343a40;
+$button-background-color-active: #ced4da;
+$button-background-color-night-active: #495057;
+$button-color: #5e6b7f;
+$button-color-night: #6c757d;
+$button-color-active: #4a5568;
+$button-color-night-active: #ced4da;
+
 $third-text: #a0aec0;
 $third-text-night: #495057;
 
 .container {
-  width: 412px;
+  width: 100%;
+  height: 100%;
 }
 
 .main {
+  height: 100%;
   background-color: $background-color;
 
   p {
@@ -78,7 +89,8 @@ $third-text-night: #495057;
 
     .cards {
       align-self: stretch;
-      .example {
+      .example,
+      .tabs {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -87,10 +99,53 @@ $third-text-night: #495057;
         padding: 20px 18px;
         border-radius: 12px;
         background-color: $card-background-color;
-        .en {
+        p {
           font-size: 18px;
           line-height: 24px;
           color: $primary-text;
+        }
+        p.zh {
+          display: none;
+        }
+      }
+      .tabs {
+        display: none;
+        padding: 20px 13px 8px;
+        .content {
+          padding: 0 5px;
+          width: 100%;
+          min-height: 250px;
+          overflow: auto;
+          > div {
+            display: none;
+            &.active {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: flex-start;
+              row-gap: 4px;
+            }
+            > p {
+              align-self: stretch;
+              font-size: 16px;
+            }
+          }
+        }
+        .buttons {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          column-gap: 4px;
+          button {
+            height: 24px;
+            line-height: 24px;
+            padding: 0 5px;
+            text-align: center;
+            border-radius: 4px;
+            border: none;
+            font-size: 12px;
+            font-weight: normal;
+          }
         }
       }
     }
@@ -102,6 +157,53 @@ $third-text-night: #495057;
       line-height: 17px;
       font-size: 15px;
       color: $third-text;
+    }
+  }
+}
+
+.back .main {
+  .inner {
+    .recite {
+      .paraphrase {
+        span {
+          display: none;
+        }
+        p {
+          display: block;
+          font-size: 18px;
+          line-height: 24px;
+          color: #2d3748;
+        }
+      }
+    }
+
+    .cards {
+      .example,
+      .tabs {
+        background-color: $card-background-color;
+        p {
+          color: $primary-text;
+        }
+        .zh {
+          display: block;
+        }
+      }
+      .tabs {
+        display: flex;
+        .content {
+          color: $primary-text;
+        }
+        .buttons {
+          button {
+            background-color: $button-background-color;
+            color: $button-color;
+            &.active {
+              background-color: $button-background-color-active;
+              color: $button-color-active;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -127,10 +229,28 @@ $third-text-night: #495057;
       }
     }
 
-    .cards .example {
-      background-color: $card-background-color-night;
-      p {
-        color: $primary-text-night;
+    .cards {
+      .example,
+      .tabs {
+        background-color: $card-background-color-night;
+        p {
+          color: $primary-text-night;
+        }
+      }
+      .tabs {
+        .content {
+          color: $primary-text-night;
+        }
+        .buttons {
+          button {
+            background-color: $button-background-color-night;
+            color: $button-color-night;
+            &.active {
+              background-color: $button-background-color-night-active;
+              color: $button-color-night-active;
+            }
+          }
+        }
       }
     }
 

@@ -19,10 +19,10 @@ const data = {
 };
 
 const meta = {
-  title: 'Anki/FrontSide',
-  component: Anki.FrontSide,
+  title: 'Anki/BackSide',
+  component: Anki.BackSide,
   args: { data },
-} satisfies Meta<typeof Anki.FrontSide>;
+} satisfies Meta<typeof Anki.BackSide>;
 
 export default meta;
 
