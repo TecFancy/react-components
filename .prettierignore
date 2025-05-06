@@ -11,8 +11,6 @@ src/stories
 .pnp.loader.mjs
 
 .yarn
-.pnp.cjs
-.pnp.loader.mjs
 stats.html
 
 public
