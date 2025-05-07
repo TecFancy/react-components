@@ -36,7 +36,6 @@ $gray-7: #f2f2f2;
 $gray-8: #f6f6f6;
 
 // Color Palettes: Blue
-$blue: #497edc !default;
 $blue-light: #c8d8f4 !default;
 $blue-lightest: #ecf1fb !default;
 $blue-dark: #255cbf !default;
@@ -77,3 +76,61 @@ $citron-light: #f4ffb7 !default;
 $citron-lightest: #f9ffdb !default;
 $citron-dark: #c4e700 !default;
 $citron-darker: #adcc00 !default;
+
+// Size
+$size-xxs: 4px !default;
+$size-xs: 8px !default;
+$size-sm: 12px !default;
+$size-md: 16px !default;
+$size-lg: 24px !default;
+$size-xl: 32px !default;
+$size-xxl: 48px !default;
+
+// Height
+$height-xs: 16px !default;
+$height-sm: 24px !default;
+$height-md: 32px !default;
+$height-lg: 40px !default;
+
+// Screen Size (breakpoints - media queries)
+$screen-xs: 480px !default;
+$screen-sm: 576px !default;
+$screen-md: 768px !default;
+$screen-lg: 992px !default;
+$screen-xl: 1200px !default;
+$screen-xxl: 1600px !default;
+
+// Space
+$margin-xxs: 4px !default;
+$margin-xs: 8px !default;
+$margin-sm: 12px !default;
+$margin-md: 16px !default;
+$margin-lg: 24px !default;
+$margin-xl: 32px !default;
+$margin-xxl: 48px !default;
+$padding-xxs: 4px !default;
+$padding-xs: 8px !default;
+$padding-sm: 12px !default;
+$padding-md: 16px !default;
+$padding-lg: 24px !default;
+$padding-xl: 32px !default;
+$padding-xxl: 48px !default;
+
+// Radius
+$radius-xs: 2px !default;
+$radius-sm: 4px !default;
+$radius-md: 6px !default;
+$radius-lg: 8px !default;
+
+// Shadow
+
+// Transition
+$transition-fast: 150ms;
+$transition-normal: 300ms;
+$transition-slow: 500ms;
+
+// Z-index
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-modal: 1030;
+$z-index-tooltip: 1040;
