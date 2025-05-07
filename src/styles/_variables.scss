@@ -1,24 +1,79 @@
-// Colors
-$primary: #1ea7fd !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
-$white: #ffffff !default;
+// Neutral colors
 $black: #000000 !default;
+$white: #ffffff !default;
 
-$blue: #0d6efd !default;
-$indigo: #6610f2 !default;
-$purple: #6f42c1 !default;
-$pink: #d63384 !default;
-$red: #dc3545 !default;
-$orange: #fd7e14 !default;
-$yellow: #fadb14 !default;
-$green: #52c41a !default;
-$teal: #20c997 !default;
-$cyan: #17a2b8 !default;
+// Primary colors
+$navy: #021f62 !default;
+$blue: #497edc !default;
+
+// Secondary colors
+$teal: #00bbc2 !default;
+$green: #7ebd31 !default;
+$orange: #ffaa46 !default;
+$coral: #fb4671 !default;
+$purple: #a14fee !default;
+$citron: #e9ff6e !default;
+
+// Gradients
+$gradient-1: linear-gradient(98.21deg, #e9ff6e 0%, #00bbc2 100%);
+$gradient-2: linear-gradient(98.21deg, #7ebd31 0%, #00bbc2 100%);
+$gradient-3: linear-gradient(98.21deg, #e9ff6e 0%, #7ebd31 100%);
+$gradient-4: linear-gradient(98.21deg, #a14fee 0%, #00bbc2 100%);
+$gradient-5: linear-gradient(98.21deg, #fb4671 0%, #a14fee 100%);
+$gradient-6: linear-gradient(98.21deg, #497edc 0%, #021f62 100%);
+$gradient-6: linear-gradient(98.21deg, #497edc 0%, #021f62 100%);
+$gradient-7: linear-gradient(98.21deg, #5a5a5c 0%, #0b0b0b 100%);
+$gradient-8: linear-gradient(98.21deg, #f3f3f1 0%, #0b0b0b 100%);
+
+// Gray colors
+$gray-1: #0b0b0b;
+$gray-2: #3d3d41;
+$gray-3: #5a5a5c;
+$gray-4: #79797a;
+$gray-5: #959597;
+$gray-6: #dddddf;
+$gray-7: #f2f2f2;
+$gray-8: #f6f6f6;
+
+// Color Palettes: Blue
+$blue: #497edc !default;
+$blue-light: #c8d8f4 !default;
+$blue-lightest: #ecf1fb !default;
+$blue-dark: #255cbf !default;
+$blue-darker: #1a4289 !default;
+
+// Color Palettes: Teal
+$teal-light: #b2eaec !default;
+$teal-lightest: #e5f8f8 !default;
+$teal-dark: #009197 !default;
+$teal-darker: #007d81 !default;
+
+// Color Palettes: Green
+$green-light: #d8ebc1 !default;
+$green-lightest: #f1f8ea !default;
+$green-dark: #629326 !default;
+$green-darker: #547e21 !default;
+
+// Color Palettes: Orange
+$orange-light: #ffe6c7 !default;
+$orange-lightest: #fff7ec !default;
+$orange-dark: #fc8f11 !default;
+$orange-darker: #d97500 !default;
+
+// Color Palettes: Coral
+$coral-light: #fec7d4 !default;
+$coral-lightest: #ffecf1 !default;
+$coral-dark: #fa2356 !default;
+$coral-darker: #d10535 !default;
+
+// Color Palettes: Purple
+$purple-light: #e3cafa !default;
+$purple-lightest: #f6edfd !default;
+$purple-dark: #902feb !default;
+$purple-darker: #5a10a1 !default;
+
+// Color Palettes: Citron
+$citron-light: #f4ffb7 !default;
+$citron-lightest: #f9ffdb !default;
+$citron-dark: #c4e700 !default;
+$citron-darker: #adcc00 !default;
