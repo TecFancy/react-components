@@ -9,8 +9,10 @@ const data = {
   exampleZh: '这是一个例句。',
   phraseCollocation:
     'example sentence  例句<br>example text  示例文本，示例文本，示例文本，示例文本<br>example sentence  例句',
-  specialTransformation: '特殊变形内容',
-  derive: '派生内容',
+  specialTransformation:
+    '特殊变形示例<br>example sentence  例句<br>example text  示例文本，示例文本，示例文本，示例文本<br>example sentence  例句',
+  derive:
+    '派生内容<br>example sentence  例句xx<br>example text  示例文本，示例文本，示例文本，示例文本<br>example sentence  例句',
   synonym: '近义词内容',
   antonym: '反义词内容',
   originalText:
