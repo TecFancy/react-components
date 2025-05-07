@@ -1,5 +1,7 @@
 @use 'normalize' as *;
 @use 'global' as *;
 @use 'variables' as *;
+@use 'typography' as *;
+
 @use '../components/Button/style' as *;
 @use '../components/Anki/style' as *;
