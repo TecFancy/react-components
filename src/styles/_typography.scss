@@ -157,21 +157,21 @@
 
 // Basic font style
 @mixin font-normal($font-weight: 400) {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Inter', 'Noto Sans SC', sans-serif;
   font-weight: $font-weight;
   font-style: normal;
 }
 
 // Italic font style
 @mixin font-italic($font-weight: 400) {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Inter', 'Noto Sans SC', sans-serif;
   font-weight: $font-weight;
   font-style: italic;
 }
 
 // Flexible font style
 @mixin font-style($font-weight: 400, $font-style: normal) {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Inter', 'Noto Sans SC', sans-serif;
   font-weight: $font-weight;
   font-style: $font-style;
 }
