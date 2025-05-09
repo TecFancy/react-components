@@ -27,6 +27,8 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:storybook": "test-storybook",
+    "commitlint": "commitlint --edit",
+    "commit": "git-cz",
     "ncu": "ncu",
     "prepare": "husky",
     "prepublishOnly": "pinst --disable",
@@ -43,11 +45,19 @@
   "dependencies": {
     "html-react-parser": "^5.2.3"
   },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  },
   "devDependencies": {
     "@babel/core": "^7.27.1",
     "@babel/preset-env": "^7.27.1",
     "@babel/preset-react": "^7.27.1",
     "@babel/preset-typescript": "^7.27.1",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@commitlint/cz-commitlint": "^19.8.1",
     "@jest/globals": "^29.7.0",
     "@rollup/plugin-commonjs": "^28.0.3",
     "@rollup/plugin-json": "^6.1.0",
@@ -81,6 +91,7 @@
     "axios": "^1.9.0",
     "babel-jest": "^29.7.0",
     "classnames": "^2.5.1",
+    "commitizen": "^4.3.1",
     "concurrently": "^9.1.2",
     "corepack": "^0.32.0",
     "css-loader": "^7.1.2",
