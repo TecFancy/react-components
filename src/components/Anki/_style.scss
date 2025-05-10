@@ -149,6 +149,9 @@ ol {
             hyphens: auto; /* 自动连字符换行（英文场景） */
             word-break: break-word; /* 防止长单词溢出 */
             margin-top: 0; /* 避免段落上方多余间距 */
+            &.original-text {
+              text-align: justify;
+            }
             &.active {
               display: flex;
               flex-direction: column;
