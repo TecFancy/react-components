@@ -6,7 +6,7 @@ const data = {
   phonetic: '/ɪɡˈzɑːmpl/',
   meaning: '例子，实例',
   example: 'This is an example sentence.',
-  exampleZh: '这是一个例句。',
+  exampleZh: '这是一个例句。这是一个例句。这是一个例句。这是一个例句。',
   phraseCollocation:
     'example sentence  例句<br>example text  示例文本，示例文本，示例文本，示例文本<br>example sentence  例句',
   specialTransformation:
