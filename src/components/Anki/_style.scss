@@ -30,12 +30,8 @@ strong {
 ul,
 ol {
   margin: 0;
-}
-ul {
-  padding: 0 0 0 10px;
-}
-ol {
-  padding: 0 0 0 12px;
+  padding: 0;
+  list-style-position: inside; /* 或 outside(默认) */
 }
 
 .custom-br {
