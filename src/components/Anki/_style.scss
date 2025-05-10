@@ -36,7 +36,7 @@ ol {
 
 .custom-br {
   width: 100%;
-  height: 4px;
+  height: 6px;
   display: block; /* 让 <br> 变成块级元素 */
   content: ''; /* 伪元素内容 */
 }
@@ -152,10 +152,6 @@ ol {
             }
             &.active {
               display: block;
-              //flex-direction: column;
-              //justify-content: center;
-              //align-items: flex-start;
-              //row-gap: 2px;
             }
           }
         }
