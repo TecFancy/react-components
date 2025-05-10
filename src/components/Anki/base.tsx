@@ -47,7 +47,7 @@ const Base = (props: Props) => {
   );
 
   const parsedText = (str?: string) => {
-    return parse((str ?? '').replace(/<br>/g, '<br class="custom-br" />'));
+    return parse((str ?? '').replace(/<br\s*\/?>/, '<br class="custom-br" />'));
   };
 
   const handleTabClick = (tabType: TabType) => {

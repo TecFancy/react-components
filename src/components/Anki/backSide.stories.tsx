@@ -8,7 +8,7 @@ const data = {
   example: 'This is an <b>example</b> sentence. This is an example sentence.',
   exampleZh: '这是一个例句。这是一个例句。这是一个例句。这是一个例句。',
   phraseCollocation:
-    '<ul><li><b>feel upset</b>：感到心烦意乱、不安，文中 “I felt very upset” 就是这种用法，表示 “我感到非常不安”。</li><li><strong>example</strong>: example example</li></ul>',
+    '<b>feel upset</b>：感到心烦意乱、不安，文中 “I felt very upset” 就是这种用法，表示 “我感到非常不安”。<br><strong>example</strong>: example example',
   specialTransformation:
     '<ol><li><b>example</b>: example example</li><li><strong>example</strong>: example example</li></ol>',
   derive:
