@@ -34,7 +34,11 @@
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
     "prepack": "pinst --disable",
-    "postpack": "pinst --enable"
+    "postpack": "pinst --enable",
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:major": "standard-version --release-as major",
+    "release:patch": "standard-version --release-as patch"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,css,scss,md}": "prettier --write"
@@ -122,6 +126,7 @@
     "sass": "^1.87.0",
     "sass-loader": "^16.0.5",
     "semver": "^7.7.1",
+    "standard-version": "^9.5.0",
     "storybook": "^8.6.12",
     "storybook-dark-mode": "^4.0.2",
     "style-loader": "^4.0.0",
