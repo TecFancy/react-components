@@ -125,7 +125,6 @@
     "rollup-plugin-visualizer": "^5.14.0",
     "sass": "^1.87.0",
     "sass-loader": "^16.0.5",
-    "semver": "^7.7.1",
     "standard-version": "^9.5.0",
     "storybook": "^8.6.12",
     "storybook-dark-mode": "^4.0.2",

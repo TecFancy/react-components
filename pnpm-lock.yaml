@@ -222,9 +222,6 @@ importers:
       sass-loader:
         specifier: ^16.0.5
         version: 16.0.5(sass@1.87.0)(webpack@5.99.8(@swc/core@1.11.24)(esbuild@0.25.3))
-      semver:
-        specifier: ^7.7.1
-        version: 7.7.1
       standard-version:
         specifier: ^9.5.0
         version: 9.5.0
