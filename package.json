@@ -1,13 +1,10 @@
 {
   "name": "react-components",
-  "version": "2.0.2",
+  "version": "0.0.2",
   "description": "",
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "sideEffects": [
     "*.css",
     "*.scss"
