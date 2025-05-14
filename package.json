@@ -1,10 +1,13 @@
 {
-  "name": "react-components",
-  "version": "1.0.0",
+  "name": "@tecfancy/react-components",
+  "version": "0.0.3",
   "description": "",
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
   "sideEffects": [
     "*.css",
     "*.scss"
@@ -30,7 +33,15 @@
     "commitlint": "commitlint --edit",
     "commit": "git-cz",
     "ncu": "ncu",
-    "prepare": "husky"
+    "prepare": "husky",
+    "prepublishOnly": "pinst --disable",
+    "postpublish": "pinst --enable",
+    "prepack": "pinst --disable",
+    "postpack": "pinst --enable",
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:major": "standard-version --release-as major",
+    "release:patch": "standard-version --release-as patch"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,css,scss,md}": "prettier --write"
@@ -117,7 +128,7 @@
     "rollup-plugin-visualizer": "^5.14.0",
     "sass": "^1.87.0",
     "sass-loader": "^16.0.5",
-    "semver": "^7.7.1",
+    "standard-version": "^9.5.0",
     "storybook": "^8.6.12",
     "storybook-dark-mode": "^4.0.2",
     "style-loader": "^4.0.0",
