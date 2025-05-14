@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/TecFancy/react-components/compare/v0.0.4...v0.0.5) (2025-05-14)
+
+### 💄 Styles
+
+- set main width to 100% for improved layout ([64f7e32](https://github.com/TecFancy/react-components/commit/64f7e32bcd0412677bdc1682cf1df22f9a2fb5d0))
+
 ### [0.0.4](https://github.com/TecFancy/react-components/compare/v0.0.3...v0.0.4) (2025-05-14)
 
 ### 👷 Build
