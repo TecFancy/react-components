@@ -192,45 +192,48 @@ ol {
   }
 }
 
-.back .main {
-  .inner {
-    .recite {
-      .paraphrase {
-        span {
-          display: none;
-        }
-        p {
-          display: block;
-          font-size: 18px;
-          line-height: 1.5;
-          color: #2d3748;
+.back {
+  width: 100%;
+  .main {
+    .inner {
+      .recite {
+        .paraphrase {
+          span {
+            display: none;
+          }
+          p {
+            display: block;
+            font-size: 18px;
+            line-height: 1.5;
+            color: #2d3748;
+          }
         }
       }
-    }
 
-    .cards {
-      .example,
-      .tabs {
-        background-color: $card-background-color;
-        p {
-          color: $primary-text;
+      .cards {
+        .example,
+        .tabs {
+          background-color: $card-background-color;
+          p {
+            color: $primary-text;
+          }
+          .zh {
+            display: block;
+          }
         }
-        .zh {
-          display: block;
-        }
-      }
-      .tabs {
-        display: flex;
-        .content {
-          color: $primary-text;
-        }
-        .buttons {
-          button {
-            background-color: $button-background-color;
-            color: $button-color;
-            &.active {
-              background-color: $button-background-color-active;
-              color: $button-color-active;
+        .tabs {
+          display: flex;
+          .content {
+            color: $primary-text;
+          }
+          .buttons {
+            button {
+              background-color: $button-background-color;
+              color: $button-color;
+              &.active {
+                background-color: $button-background-color-active;
+                color: $button-color-active;
+              }
             }
           }
         }
