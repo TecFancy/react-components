@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/TecFancy/react-components/compare/v0.0.5...v0.0.6) (2025-05-14)
+
+### 💄 Styles
+
+- **night_mode:** improve layout and structure for night mode styles ([56dae0a](https://github.com/TecFancy/react-components/commit/56dae0af49e9500cbfce7fca5d5daa42d4a50393))
+
 ### [0.0.5](https://github.com/TecFancy/react-components/compare/v0.0.4...v0.0.5) (2025-05-14)
 
 ### 💄 Styles
