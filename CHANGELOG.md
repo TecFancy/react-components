@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/TecFancy/react-components/compare/v0.0.3...v0.0.4) (2025-05-14)
+
+### 👷 Build
+
+- remove pinst and add is-ci dependencies ([b75d090](https://github.com/TecFancy/react-components/commit/b75d090e813282cfe1233315c5acf0b161899344))
+
+### 💄 Styles
+
+- **Anki:** enhance layout structure and improve card styling ([4ef1923](https://github.com/TecFancy/react-components/commit/4ef192344236d7e1d1de43766d9c79639cfba274))
+
 ### [0.0.3](https://github.com/TecFancy/react-components/compare/v2.0.2...v0.0.3) (2025-05-14)
 
 ### 📝 Documentation
