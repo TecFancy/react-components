@@ -30,11 +30,7 @@
     "commitlint": "commitlint --edit",
     "commit": "git-cz",
     "ncu": "ncu",
-    "prepare": "husky",
-    "prepublishOnly": "pinst --disable",
-    "postpublish": "pinst --enable",
-    "prepack": "pinst --disable",
-    "postpack": "pinst --enable"
+    "prepare": "husky"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,css,scss,md}": "prettier --write"
@@ -43,7 +39,8 @@
     "@": "./src"
   },
   "dependencies": {
-    "html-react-parser": "^5.2.4"
+    "html-react-parser": "^5.2.4",
+    "is-ci": "^4.1.0"
   },
   "config": {
     "commitizen": {
@@ -106,7 +103,6 @@
     "msw-storybook-addon": "^2.0.4",
     "nodemon": "^3.1.10",
     "npm-check-updates": "^18.0.1",
-    "pinst": ">=3",
     "postcss": "^8.5.3",
     "postcss-import": "^16.1.0",
     "prettier": "^3.5.3",
