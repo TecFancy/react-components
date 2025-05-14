@@ -243,54 +243,58 @@ ol {
   }
 }
 
-.night_mode .main {
+.night_mode {
+  height: 100%;
   background-color: $background-color-night;
-  .inner {
-    .recite {
-      .paraphrase {
-        span {
+  .main {
+    background-color: $background-color-night;
+    .inner {
+      .recite {
+        .paraphrase {
+          span {
+            background-color: $card-background-color-night;
+          }
+          p {
+            color: $primary-text-night;
+          }
+        }
+
+        .word {
+          color: $primary-text-night;
+          .phonetic {
+            color: $secondary-text-night;
+          }
+        }
+      }
+
+      .cards {
+        .example,
+        .tabs {
           background-color: $card-background-color-night;
+          p {
+            color: $primary-text-night;
+          }
         }
-        p {
-          color: $primary-text-night;
-        }
-      }
-
-      .word {
-        color: $primary-text-night;
-        .phonetic {
-          color: $secondary-text-night;
-        }
-      }
-    }
-
-    .cards {
-      .example,
-      .tabs {
-        background-color: $card-background-color-night;
-        p {
-          color: $primary-text-night;
-        }
-      }
-      .tabs {
-        .content {
-          color: $primary-text-night;
-        }
-        .buttons {
-          button {
-            background-color: $button-background-color-night;
-            color: $button-color-night;
-            &.active {
-              background-color: $button-background-color-night-active;
-              color: $button-color-night-active;
+        .tabs {
+          .content {
+            color: $primary-text-night;
+          }
+          .buttons {
+            button {
+              background-color: $button-background-color-night;
+              color: $button-color-night;
+              &.active {
+                background-color: $button-background-color-night-active;
+                color: $button-color-night-active;
+              }
             }
           }
         }
       }
-    }
 
-    .tags {
-      color: $third-text-night;
+      .tags {
+        color: $third-text-night;
+      }
     }
   }
 }
