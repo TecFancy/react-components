@@ -17,7 +17,7 @@ interface Props {
 
 const Base = (props: Props) => {
   const { data } = props;
-  const [activeTab, setActiveTab] = useState<TabType | null>(null);
+  const [activeTab, setActiveTab] = useState<TabType | ''>('');
 
   const phraseCollocationClass = classNames('phrase-collocation', {
     active: activeTab === 'phraseCollocation',
@@ -68,7 +68,7 @@ const Base = (props: Props) => {
 
     // 找到第一个有数据的标签
     const firstAvailableTab = tabTypes.find(
-      (tab) => data?.[tab] as unknown as any
+      (tab) => data?.[tab] as TabType | undefined
     );
     if (firstAvailableTab) {
       setActiveTab(firstAvailableTab);
