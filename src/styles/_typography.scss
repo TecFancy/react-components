@@ -1,0 +1,177 @@
+@use 'variables' as *;
+
+// Header Text
+@mixin heading-hero(
+  $font-size: 56px,
+  $line-height: 56px,
+  $font-weight: 700,
+  $color: $gray-1
+) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  color: $color;
+}
+
+@mixin heading-1(
+  $font-size: 32px,
+  $line-height: 32px,
+  $font-weight: 700,
+  $color: $gray-1
+) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  color: $gray-1;
+}
+
+@mixin heading-2(
+  $font-size: 24px,
+  $line-height: 32px,
+  $font-weight: 700,
+  $color: $gray-1
+) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  color: $gray-1;
+}
+
+@mixin heading-3(
+  $font-size: 20px,
+  $line-height: 26px,
+  $font-weight: 500,
+  $color: $gray-1
+) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  color: $gray-1;
+}
+
+@mixin heading-4(
+  $font-size: 16px,
+  $line-height: 24px,
+  $font-weight: 700,
+  $color: $gray-1
+) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  color: $gray-1;
+}
+
+@mixin heading-5(
+  $font-size: 14px,
+  $line-height: 18px,
+  $font-weight: 700,
+  $color: $gray-1
+) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  color: $gray-1;
+}
+
+// Body Text
+@mixin body-large-regular(
+  $font-size: 16px,
+  $line-height: 24px,
+  $font-weight: 400,
+  $color: $gray-1
+) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  color: $color;
+}
+@mixin body-large-medium(
+  $font-size: 16px,
+  $line-height: 24px,
+  $font-weight: 500,
+  $color: $gray-1
+) {
+  @include body-large-regular($font-size, $line-height, $font-weight, $color);
+}
+
+@mixin body-small-regular(
+  $font-size: 14px,
+  $line-height: 18px,
+  $font-weight: 400,
+  $color: $gray-1
+) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  color: $color;
+}
+@mixin body-small-medium(
+  $font-size: 14px,
+  $line-height: 18px,
+  $font-weight: 500,
+  $color: $gray-1
+) {
+  @include body-small-regular($font-size, $line-height, $font-weight, $color);
+}
+
+@mixin description-medium(
+  $font-size: 12px,
+  $line-height: 18px,
+  $font-weight: 500,
+  $color: $gray-1
+) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  color: $color;
+}
+@mixin description-regular(
+  $font-size: 12px,
+  $line-height: 18px,
+  $font-weight: 400,
+  $color: $gray-1
+) {
+  @include description-medium($font-size, $line-height, $font-weight, $color);
+}
+
+// CTA Text
+@mixin cta-text(
+  $font-size: 14px,
+  $line-height: 18px,
+  $font-weight: 700,
+  $color: $gray-1,
+  $text-decoration-line: underline,
+  $text-decoration-thickness: 1px,
+  $text-decoration-style: solid,
+  $text-decoration-color: $gray-1
+) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  color: $color;
+  text-decoration-line: $text-decoration-line;
+  text-decoration-thickness: $text-decoration-thickness;
+  text-decoration-style: $text-decoration-style;
+  text-decoration-color: $text-decoration-color;
+}
+
+// Basic font style
+@mixin font-normal($font-weight: 400) {
+  font-family: 'Inter', 'Noto Sans SC', sans-serif;
+  font-weight: $font-weight;
+  font-style: normal;
+}
+
+// Italic font style
+@mixin font-italic($font-weight: 400) {
+  font-family: 'Inter', 'Noto Sans SC', sans-serif;
+  font-weight: $font-weight;
+  font-style: italic;
+}
+
+// Flexible font style
+@mixin font-style($font-weight: 400, $font-style: normal) {
+  font-family: 'Inter', 'Noto Sans SC', sans-serif;
+  font-weight: $font-weight;
+  font-style: $font-style;
+}

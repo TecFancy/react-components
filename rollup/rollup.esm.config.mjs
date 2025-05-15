@@ -39,6 +39,10 @@ const config = defineConfig({
           dest: 'dist/es/styles',
         },
         {
+          src: 'src/styles/_typography.scss',
+          dest: 'dist/es/styles',
+        },
+        {
           src: 'src/statics/fonts',
           dest: 'dist/es/statics',
         }

@@ -22,20 +22,36 @@ $button-color-night-active: #ced4da;
 $third-text: #a0aec0;
 $third-text-night: #495057;
 
+b,
+strong {
+  font-weight: 600;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style-position: inside; /* 或 outside(默认) */
+}
+
 .custom-br {
+  width: 100%;
+  height: 6px;
   display: block; /* 让 <br> 变成块级元素 */
   content: ''; /* 伪元素内容 */
 }
 
 .container {
-  min-width: min(100%, 390px); /* 至少 390px，但不超过父容器 */
+  min-width: 390px;
   max-width: 65ch;
+  width: 100%;
   height: 100%;
-  text-align: justify;
+  text-align: left;
   letter-spacing: -0.015em;
 }
 
 .main {
+  width: 100%;
   height: 100%;
   background-color: $background-color;
 
@@ -103,7 +119,7 @@ $third-text-night: #495057;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        row-gap: 16px;
+        row-gap: 8px;
         padding: 20px 18px;
         border-radius: 12px;
         background-color: $card-background-color;
@@ -118,7 +134,7 @@ $third-text-night: #495057;
       }
       .tabs {
         display: none;
-        padding: 20px 13px 8px;
+        padding: 20px 13px 0;
         .content {
           align-self: stretch;
           padding: 0 5px;
@@ -132,12 +148,11 @@ $third-text-night: #495057;
             hyphens: auto; /* 自动连字符换行（英文场景） */
             word-break: break-word; /* 防止长单词溢出 */
             margin-top: 0; /* 避免段落上方多余间距 */
+            &.original-text {
+              text-align: justify;
+            }
             &.active {
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: flex-start;
-              row-gap: 4px;
+              display: block;
             }
           }
         }
@@ -146,6 +161,13 @@ $third-text-night: #495057;
           justify-content: flex-start;
           align-items: center;
           column-gap: 4px;
+          position: sticky;
+          bottom: 0;
+          margin-top: auto; /* 让按钮在底部 */
+          border-radius: 4px;
+          background-color: inherit;
+          align-self: stretch;
+          padding: 8px 0;
           button {
             height: 24px;
             line-height: 24px;
@@ -171,45 +193,48 @@ $third-text-night: #495057;
   }
 }
 
-.back .main {
-  .inner {
-    .recite {
-      .paraphrase {
-        span {
-          display: none;
-        }
-        p {
-          display: block;
-          font-size: 18px;
-          line-height: 1.5;
-          color: #2d3748;
+.back {
+  width: 100%;
+  .main {
+    .inner {
+      .recite {
+        .paraphrase {
+          span {
+            display: none;
+          }
+          p {
+            display: block;
+            font-size: 18px;
+            line-height: 1.5;
+            color: #2d3748;
+          }
         }
       }
-    }
 
-    .cards {
-      .example,
-      .tabs {
-        background-color: $card-background-color;
-        p {
-          color: $primary-text;
+      .cards {
+        .example,
+        .tabs {
+          background-color: $card-background-color;
+          p {
+            color: $primary-text;
+          }
+          .zh {
+            display: block;
+          }
         }
-        .zh {
-          display: block;
-        }
-      }
-      .tabs {
-        display: flex;
-        .content {
-          color: $primary-text;
-        }
-        .buttons {
-          button {
-            background-color: $button-background-color;
-            color: $button-color;
-            &.active {
-              background-color: $button-background-color-active;
-              color: $button-color-active;
+        .tabs {
+          display: flex;
+          .content {
+            color: $primary-text;
+          }
+          .buttons {
+            button {
+              background-color: $button-background-color;
+              color: $button-color;
+              &.active {
+                background-color: $button-background-color-active;
+                color: $button-color-active;
+              }
             }
           }
         }
@@ -218,54 +243,58 @@ $third-text-night: #495057;
   }
 }
 
-.night_mode .main {
+.night_mode {
+  height: 100%;
   background-color: $background-color-night;
-  .inner {
-    .recite {
-      .paraphrase {
-        span {
+  .main {
+    background-color: $background-color-night;
+    .inner {
+      .recite {
+        .paraphrase {
+          span {
+            background-color: $card-background-color-night;
+          }
+          p {
+            color: $primary-text-night;
+          }
+        }
+
+        .word {
+          color: $primary-text-night;
+          .phonetic {
+            color: $secondary-text-night;
+          }
+        }
+      }
+
+      .cards {
+        .example,
+        .tabs {
           background-color: $card-background-color-night;
+          p {
+            color: $primary-text-night;
+          }
         }
-        p {
-          color: $primary-text-night;
-        }
-      }
-
-      .word {
-        color: $primary-text-night;
-        .phonetic {
-          color: $secondary-text-night;
-        }
-      }
-    }
-
-    .cards {
-      .example,
-      .tabs {
-        background-color: $card-background-color-night;
-        p {
-          color: $primary-text-night;
-        }
-      }
-      .tabs {
-        .content {
-          color: $primary-text-night;
-        }
-        .buttons {
-          button {
-            background-color: $button-background-color-night;
-            color: $button-color-night;
-            &.active {
-              background-color: $button-background-color-night-active;
-              color: $button-color-night-active;
+        .tabs {
+          .content {
+            color: $primary-text-night;
+          }
+          .buttons {
+            button {
+              background-color: $button-background-color-night;
+              color: $button-color-night;
+              &.active {
+                background-color: $button-background-color-night-active;
+                color: $button-color-night-active;
+              }
             }
           }
         }
       }
-    }
 
-    .tags {
-      color: $third-text-night;
+      .tags {
+        color: $third-text-night;
+      }
     }
   }
 }

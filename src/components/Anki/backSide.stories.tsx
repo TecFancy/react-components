@@ -2,15 +2,17 @@ import { Anki } from '../../';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const data = {
-  word: 'example',
+  word: 'good turn deserves another',
   phonetic: '/ɪɡˈzɑːmpl/',
   meaning: '例子，实例',
-  example: 'This is an example sentence.',
-  exampleZh: '这是一个例句。',
+  example: 'This is an <b>example</b> sentence. This is an example sentence.',
+  exampleZh: '这是一个例句。这是一个例句。这是一个例句。这是一个例句。',
   phraseCollocation:
-    'example sentence  例句<br>example text  示例文本，示例文本，示例文本，示例文本<br>example sentence  例句',
-  specialTransformation: '特殊变形内容',
-  derive: '派生内容',
+    '<b>feel upset</b>：感到心烦意乱、不安，文中 “I felt very upset” 就是这种用法，表示 “我感到非常不安”。<br><strong>example</strong>: example example',
+  specialTransformation:
+    '<ol><li><b>example</b>: example example</li><li><strong>example</strong>: example example</li></ol>',
+  derive:
+    '派生内容<br>example sentence  例句xx<br>example text  示例文本，示例文本，示例文本，示例文本<br>example sentence  例句',
   synonym: '近义词内容',
   antonym: '反义词内容',
   originalText:

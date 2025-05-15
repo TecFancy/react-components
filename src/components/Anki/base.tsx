@@ -47,7 +47,9 @@ const Base = (props: Props) => {
   );
 
   const parsedText = (str?: string) => {
-    return parse((str ?? '').replace(/<br>/g, '<br class="custom-br" />'));
+    return parse(
+      (str ?? '').replace(/<br\s*\/?>/g, '<br class="custom-br" />')
+    );
   };
 
   const handleTabClick = (tabType: TabType) => {
@@ -180,9 +182,7 @@ const Base = (props: Props) => {
           </div>
         )}
 
-        {data?.tags && data?.side === 'back' && (
-          <p className="tags">{data.tags}</p>
-        )}
+        {data?.tags && <p className="tags">{data.tags}</p>}
       </div>
     </main>
   );
