@@ -5,6 +5,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
 import terser from '@rollup/plugin-terser';
 import { visualizer } from "rollup-plugin-visualizer";
+import babel from '@rollup/plugin-babel';
 
 const overrides = {
   compilerOptions: { declaration: true },
@@ -23,11 +24,24 @@ const config = defineConfig({
   plugins: [
     nodeResolve(),
     commonjs(),
+    babel({
+      babelHelpers: 'runtime',
+      exclude: 'node_modules/**',
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    }),
     json(),
     typescript({ tsconfigOverride: overrides }),
     terser(),
     visualizer(),
   ],
+  external: [
+    'react',
+    'react-dom',
+    '@emotion/react',
+    '@emotion/styled',
+    /@emotion\/react\/.*/,
+    /@emotion\/styled\/.*/
+  ]
 });
 
 export default config;

@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from '@emotion/styled';
 import classNames from 'classnames';
 
 type ButtonSize = 'small' | 'medium' | 'large';
@@ -31,6 +32,15 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
+const StyledButton = styled.button(
+  {
+    backgroundColor: '#007bff',
+  },
+  {
+    label: 'custom-styled-button',
+  }
+);
+
 /** Primary UI component for user interaction */
 const Button = ({
   label,
@@ -51,9 +61,9 @@ const Button = ({
   );
 
   return (
-    <button type="button" className={classes} onClick={onClick}>
+    <StyledButton type="button" className={classes} onClick={onClick}>
       {label}
-    </button>
+    </StyledButton>
   );
 };
 
