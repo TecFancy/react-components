@@ -29,7 +29,7 @@
     "format": "prettier --write 'src/**/*.{ts,tsx,scss}'",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:storybook": "test-storybook",
+    "test:coverage": "jest --coverage",
     "commitlint": "commitlint --edit",
     "commit": "git-cz",
     "ncu": "ncu",
